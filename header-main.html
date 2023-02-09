@@ -19,19 +19,18 @@
             justify-content: center;
             align-items: center;
         }
-
-        .container {
-            max-width: 1250px;
+        .heder-main-container{
+            height: 550px;
             width: 100%;
             display: flex;
         }
 
         .heder-main-container {
             display: flex;
-            flex-direction: column;
-            gap: 20px;
+            height: 225px;
         }
-        .heder-main-container > .someCont {
+        .down{
+            height: 225px;
             display: flex;
             flex-flow: row nowrap;
             gap: 20px;
@@ -61,12 +60,8 @@
             font-size: 1.1em;
             margin-top: 10px;
         }
-
-        .heder-main-container .someChild > img {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%;
-            height: 100%;
+        #first-head{
+            background-image: url("./images/hero-product-1.jpg");
             background-size: cover;
             z-index: -1;
         }
@@ -89,10 +84,10 @@
 <body>
     <h1>Serjooooo!!!!!!! mahahahah</h1>
     <header class="section">
-        <div class="heder-main-container container">
-            <div class="up someCont">
-                <div class="norm someChild">
-                    <h3 class="header-card-title">Art Deco Home</h3>
+        <div class="heder-main-container,container">
+            <div class="up">
+                <div class="norm" id="first-head">
+                    <p class="header-card-title">Art Deco Home</p>
                     <p class="header-card-paragraph">Decoration</p>
                     <img src="images/hero-product-1.jpg">
                 </div>
