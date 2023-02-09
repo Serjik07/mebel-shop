@@ -9,62 +9,108 @@
         *{
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        body {
-            margin: 0 40px;
+
+        .section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .heder-main-container{
-            height: 100vh;
+            height: 550px;
             width: 100%;
-        }
-        .up{
             display: flex;
-            height: 500px;
+        }
+
+        .heder-main-container {
+            display: flex;
+            height: 225px;
         }
         .down{
-            height: 500px;
+            height: 225px;
             display: flex;
+            flex-flow: row nowrap;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .heder-main-container > .up {
+            height: 400px;
+        }
+
+        .heder-main-container > .down {
+            height: 180px;
+        }
+
+        .heder-main-container .someChild {
+            height: 100%; 
+            position: relative;
+            padding: 40px 25px;
+        }
+
+        .heder-main-container .someChild > h3 {
+            font-size: 1.5em;
+            font-weight: normal;
+        }
+
+        .heder-main-container .someChild > p {
+            font-size: 1.1em;
+            margin-top: 10px;
         }
         #first-head{
-            margin-right: 20px;
             background-image: url("./images/hero-product-1.jpg");
             background-size: cover;
+            z-index: -1;
         }
-        .norm{
-            height: 100%; 
-            width: 300px;
+
+        .heder-main-container > .up > .norm {
+            width: 25%;
         }
+
+        .heder-main-container > .up > .great {
+            width: 50%;
+        }
+
+        .down > .down-card-header {
+            width: 50%;
+        }
+
+
     </style>
 </head>
 <body>
     <header class="section">
-        <div class="heder-main-container container">
+        <div class="heder-main-container,container">
             <div class="up">
                 <div class="norm" id="first-head">
                     <p class="header-card-title">Art Deco Home</p>
                     <p class="header-card-paragraph">Decoration</p>
+                    <img src="images/hero-product-1.jpg">
                 </div>
-                <div class="great">
-                    <p class="header-card-title">Helen Chair</p>
+                <div class="great someChild">
+                    <h3 class="header-card-title">Helen Chair</h3>
                     <p class="header-card-paragraph">Decoration</p>
-                    <img src="images/hero-product-2.jpg" class="heder-img">
+                    <img src="images/hero-product-2.jpg">
                 </div>
-                <div class="norm">
-                    <p class="header-card-title">Vase Of Flowrs</p>
+                <div class="norm someChild">
+                    <h3 class="header-card-title">Vase Of Flowrs</h3>
                     <p class="header-card-paragraph">Decoration</p>
-                    <img src="images/hero-product-3.jpg" class="heder-img">
+                    <img src="images/hero-product-3.jpg">
                 </div>
             </div>
-            <div class="down">
-                <div class="down-card-header">
-                    <p class="header-card-title">Wood Eggs</p>
+            <div class="down someCont">
+                <div class="down-card-header someChild">
+                    <h3 class="header-card-title">Wood Eggs</h3>
                     <p class="header-card-paragraph">Decoration</p>
-                    <img src="images/hero-product-4.jpg" class="heder-img">
+                    <img src="images/hero-product-4.jpg">
                 </div>
-                <div class="down-card-header">
-                    <p class="header-card-title">Table Wood Pine</p>
+                <div class="down-card-header someChild">
+                    <h3 class="header-card-title">Table Wood Pine</h3>
                     <p class="header-card-paragraph">Decoration</p>
-                    <img src="images/hero-product-5.jpg" class="heder-img">
+                    <img src="images/hero-product-5.jpg">
                 </div>
             </div>
         </div>
