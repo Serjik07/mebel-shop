@@ -6,8 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mebel-shop</title>
     <link rel="icon" href="favicon.svg" sizes="16*16">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font-Aweson -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    
+    <header id="header" class="section">
+            
+        <nav id="nav">
+            <div class="navCont container">
+                <div class="logo"><h3>Woodex</h3></div>
+
+                <ul class="links">
+                    <li>Hero</li>
+                    <li>Blog</li>
+                    <li>Shop</li>
+                    <li>About Us</li>
+                    <li>Contact</li>
+                </ul>
+
+                <div class="nav-icons">
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                    <i class="fa fa-heart" aria-hidden="true"><sub>0</sub></i>
+                    <i class="fa fa-shopping-bag" aria-hidden="true"><sub>0</sub></i>
+                    <i class="fa fa-bars menuBtn" aria-hidden="true"></i>
+                </div>
+            </div>
+        </nav>
+
+        <div class="heder-main-container container">
+            <div class="up someCont">
+                <div class="norm someChild">
+                    <h3 class="header-card-title">Art Deco Home</h3>
+                    <p class="header-card-paragraph">Decoration</p>
+                    <img src="images/hero-product-1.jpg">
+                </div>
+                <div class="great someChild">
+                    <h3 class="header-card-title">Helen Chair</h3>
+                    <p class="header-card-paragraph">Decoration</p>
+                    <img src="images/hero-product-2.jpg">
+                </div>
+                <div class="norm someChild">
+                    <h3 class="header-card-title">Vase Of Flowrs</h3>
+                    <p class="header-card-paragraph">Decoration</p>
+                    <img src="images/hero-product-3.jpg">
+                </div>
+            </div>
+            <div class="down someCont">
+                <div class="down-card-header someChild">
+                    <h3 class="header-card-title">Wood Eggs</h3>
+                    <p class="header-card-paragraph">Decoration</p>
+                    <img src="images/hero-product-4.jpg">
+                </div>
+                <div class="down-card-header someChild">
+                    <h3 class="header-card-title">Table Wood Pine</h3>
+                    <p class="header-card-paragraph">Decoration</p>
+                    <img src="images/hero-product-5.jpg">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="responsiveMenu">
+        <div class="vse"></div>
+        <div class="aside">
+            <div class="aside-up">
+                <div class="logo"><h3>Woodex</h3></div>
+                <ion-icon name="close-outline" class="close"></ion-icon>
+            </div>
+
+            <div class="aside-main">
+                <div class="link"><span>Hero</span></div>
+                <div class="link"><span>Blog</span></div>
+                <div class="link"><span>Shop</span></div>
+                <div class="link"><span>About Us</span></div>
+                <div class="link"><span>Contact</span></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script defer src="js/script.js"></script>
+
+    <!-- ion-icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

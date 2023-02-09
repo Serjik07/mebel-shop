@@ -1,111 +1,392 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
-/**
- * copyright 2022 codewithsadee
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
-
-
-
-
-
-/*-----------------------------------*\
-  #RESET
-\*-----------------------------------*/
-
-
-
-
-
-/*-----------------------------------*\
-  #REUSED STYLE
-\*-----------------------------------*/
-
-
-
-
-
-/*-----------------------------------*\
-  #HEADER
-\*-----------------------------------*/
-
-
-
-
-
-/*-----------------------------------*\
-  #SIDEBAR
-\*-----------------------------------*/
-
-
-
-
-
-/*-----------------------------------*\
-  #HERO
-\*-----------------------------------*/
-
-
-
-
-
-/*-----------------------------------*\
-  #ABOUT
-\*-----------------------------------*/
-
-
-
-
-
-/*-----------------------------------*\
-  #PRODUCT
-\*-----------------------------------*/
-
-
-
-
-
-/*-----------------------------------*\
-  #BLOG
-\*-----------------------------------*/
-
-
-
-
-
-/*-----------------------------------*\
-  #NEWSLATTER
-\*-----------------------------------*/
-
-
-
-
-
-/*-----------------------------------*\
-  #FOOTER
-\*-----------------------------------*/
-
-
-
-
-
-/*-----------------------------------*\
-  #BACK TO TOP
-\*-----------------------------------*/
-
-
-
-
-
-/*-----------------------------------*\
-  #MEDIA QUERIES
-\*-----------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --red-orange-color-wheel: hsl(17, 96%, 48%);
+  --middle-blue-green: hsl(167, 45%, 72%);
+  --smokey-black: hsl(0, 0%, 7%);
+  --spanish-gray: hsl(0, 0%, 60%);
+  --granite-gray: hsl(0, 0%, 40%);
+  --tan-crayola: hsl(27, 46%, 58%);
+  --light-gray: hsl(0, 0%, 80%);
+  --black_10: hsla(0, 0%, 0%, 0.1);
+  --black_25: hsla(0, 0%, 0%, 0.25);
+  --black_50: hsla(0, 0%, 0%, 0.4);
+  --black_70: hsla(0, 0%, 0%, 0.7);
+  --cultured: hsl(220, 16%, 96%);
+  --manatee: hsl(218, 11%, 65%);
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+}
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header {
+  padding-top: 100px;
+}
+
+.container {
+  max-width: 1250px;
+  width: 100%;
+  display: flex;
+}
+
+
+/*__________ NAV _____________*/
+
+#nav {
+  padding: 20px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: 0.5s;
+}
+
+#nav.active {
+  box-shadow: 0 0 10px 5px var(--black_10);
+}
+
+#nav > .navCont {
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navCont > .logo > h3 {
+  font-size: 2em;
+  font-weight: normal;
+  color: var(--smokey-black);
+}
+
+.navCont > .links {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+} 
+
+.navCont > .links > li {
+  font-size: 1.1em;
+  color: var(--smokey-black);
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.navCont > .links > li::before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background: var(--black_70);
+  transition: all 0.5s;
+}
+
+.navCont > .links > li:hover:before {
+  width: 100%;
+  left: 0;
+}
+
+.navCont > .nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navCont > .nav-icons > i {
+  font-size: 1.4em;
+  cursor: pointer;
+  color: var(--smokey-black);
+  transition: all 0.5s;
+}
+
+.navCont > .nav-icons > i:hover {
+  color: var(--tan-crayola);
+} 
+
+.navCont > .nav-icons > i:nth-child(2),
+.navCont > .nav-icons > i:nth-child(3) {
+  position: relative;
+}
+
+.navCont > .nav-icons > i > sub {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  font-size: 0.5em;
+  background: var(--tan-crayola);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+}
+
+#responsiveMenu {
+  display: none;
+}
+
+.nav-icons > .menuBtn {
+  display: none;
+}
+
+
+/*__________ HEADER ____________ */
+
+.heder-main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.heder-main-container > .someCont {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.heder-main-container .someChild {
+  height: 100%; 
+  position: relative;
+  padding: 40px 25px;
+  overflow: hidden;
+}
+
+.heder-main-container .someChild > h3 {
+  font-size: 1.5em;
+  font-weight: normal;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.heder-main-container .someChild > h3:hover {
+  color: var(--tan-crayola);
+}
+
+.heder-main-container .someChild > p {
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+.heder-main-container .someChild > img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
+  transform: scale(1);
+  transition: all 0.5s;
+}
+
+.heder-main-container .someChild:hover > img {
+  transform: scale(1.05);
+}
+
+.heder-main-container > .down > .someChild {
+  height: 180px;
+}
+
+.heder-main-container > .up > .someChild {
+  height: 400px;
+}
+
+.heder-main-container > .up > .norm {
+  width: 25%;
+}
+
+.heder-main-container > .up > .great {
+  width: 50%;
+}
+
+.down > .down-card-header {
+  width: 50%;
+}
+
+
+@media screen and (max-width: 1300px) {
+  .container {
+      max-width: 1000px;
+      width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  .container {
+      max-width: 750px;
+      width: 100%;
+  }
+
+  .navCont > .links {
+      gap: 20px;
+  }
+
+  .navCont > .links > li {
+      font-size: 1.1em;
+  }
+
+  .heder-main-container > .up > .someChild {
+      max-width: calc(100% / 3);
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 785px) {
+  .container {
+      max-width: 750px;
+      width: 100%;
+  }
+
+  .navCont > .links {
+      display: none;
+  }
+
+  .navCont > .links > li {
+      font-size: 1em;
+  }
+
+  #responsiveMenu {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      top: 0; left: 0;
+      z-index: 1000;
+      visibility: hidden;
+      transition: all 0.5s;
+  }
+
+  .nav-icons > .menuBtn {
+      display: block;
+  }
+
+  #responsiveMenu.active {
+      visibility: visible;
+  }
+
+  #responsiveMenu > .vse {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100vh;
+      background: var(--black_50);
+      z-index: -1;
+      transition: all 0.5s;
+      opacity: 0;
+  }
+
+  #responsiveMenu.active > .vse {
+      opacity: 1;
+  }
+
+  #responsiveMenu.active > .aside {
+      transform: translateX(0);
+  }
+
+  #responsiveMenu > .aside {
+      width: 400px;
+      height: 100vh;
+      background: var(--white);
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      transform: translateX(-100%);
+      transition: all 0.5s;
+  }
+
+  #responsiveMenu > .aside > .aside-up {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  #responsiveMenu > .aside > .aside-up > .logo > h3 {
+      font-size: 2em;
+      font-weight: normal;
+      color: var(--smokey-black);
+  }
+
+  #responsiveMenu > .aside > .aside-up > ion-icon {
+      font-size: 2.7em;
+      color: var(--smokey-black);
+      cursor: pointer;
+      transition: all 0.5s;
+  }
+
+  #responsiveMenu > .aside > .aside-up > ion-icon:hover {
+      transform: rotate(180deg);
+      color: var(--tan-crayola);
+  }
+
+  #responsiveMenu > .aside > .aside-main {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+  }
+
+  #responsiveMenu > .aside > .aside-main > .link {
+      width: 100%;
+      padding: 10px 0;
+      border-bottom: 2px solid var(--smokey-black);
+      cursor: pointer;
+      transition: all 0.5s;
+  }
+
+  #responsiveMenu > .aside > .aside-main > .link:hover {
+      border-bottom: 2px solid var(--tan-crayola);
+  }
+
+  #responsiveMenu > .aside > .aside-main > .link > span {
+      color: var(--smokey-black);
+      font-size: 1.2em;
+  }
+
+  #responsiveMenu > .aside > .aside-main > .link:hover > span {
+      color: var(--tan-crayola);
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .container {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .heder-main-container > .someCont {
+    flex-direction: column;
+  }
+
+  .heder-main-container > .someCont > .someChild {
+    max-width: 100%;
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+  #responsiveMenu > .aside {
+    width: 100%;
+  }
+}
