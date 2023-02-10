@@ -71,7 +71,13 @@
         .shopContUp > .filterProductName {
             display: flex;
             align-items: center;
+            flex-flow: row wrap;
+            justify-content: center;
             gap: 20px;
+        }
+
+        .filterProductName > .link.active {
+            color: var(--tan-crayola);
         }
 
         .shopContUp > .filterProductName > p {
@@ -85,12 +91,13 @@
         } 
 
         .shopMainCont {
-            gap: 20px;
+            gap: 30px;
             justify-content: space-between;
+            flex-flow: row wrap;
         }
 
         .shopMainCont > .card {
-            width: 300px;
+            width: 290px;
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -100,7 +107,7 @@
 
         .shopMainCont > .card > .cardImg {
             width: 100%;
-            height: 300px;
+            height: 290px;
             position: relative;
             transition: all 0.5s;
         }
@@ -184,6 +191,85 @@
             font-size: 1.1em;
             color: var(--smokey-black);
         }
+
+        /* @media screen and (max-width: 967px) {
+            .shopMainCont > .card {
+                width: 250px;
+            }
+            .shopMainCont > .card > .cardImg {
+                height: 250px;
+            }
+        } */
+
+        
+
+@media screen and (max-width: 1300px) {
+  .container {
+      max-width: 1000px;
+      width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  .container {
+      max-width: 750px;
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 785px) {
+  .container {
+      max-width: 750px;
+      width: 100%;
+  }
+
+  .shopContUp {
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .container {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .shopMainCont > .card {
+    width: 230px;
+  }
+
+  .shopMainCont > .card  > .cardImg {
+    height: 230px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+    .shopMainCont {
+        justify-content: center;
+        gap: 80px;
+    }
+    .shopMainCont > .card {
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .shopMainCont > .card > .cardImg {
+        max-height: 400px;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .shopContUp > .filterProductName > span {
+        display: none;
+    }
+}
+
+
     </style>
 </head>
 <body>
@@ -192,88 +278,108 @@
             <h2 class="shopTitle">Popular Products</h2>
 
             <div class="filterProductName">
-                <p class="all">All Products</p><span>|</span>
-                <p class="accessory">Accessory</p><span>|</span>
-                <p class="decoration">Decoration</p><span>|</span>
-                <p class="furniture">Furniture</p>
+                <p class="link active" aria-label="all">All Products</p><span>|</span>
+                <p class="link" aria-label="accessory">Accessory</p><span>|</span>
+                <p class="link" aria-label="decoration">Decoration</p><span>|</span>
+                <p class="link" aria-label="furniture">Furniture</p>
             </div>
         </div>
 
-        <div class="shopMainCont container">
-            <div class="card">
-                <div class="cardImg">
-                    <img src="images/product-1.jpg" alt="Products">
-                    <div class="hoverEfect">
-                        <div class="icons">
-                            <div class="icon"><ion-icon name="add-outline"></ion-icon></div>
-                            <div class="icon"><ion-icon name="heart-outline"></ion-icon></div>
-                            <div class="icon"><ion-icon name="bag-handle-outline"></ion-icon></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3 class="productName">Animi Dolor Pariatur</h3>
-                    <p class="gin">$19.00</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="cardImg">
-                    <img src="images/product-1.jpg" alt="Products">
-                    <div class="hoverEfect">
-                        <div class="icons">
-                            <div class="icon"><ion-icon name="add-outline"></ion-icon></div>
-                            <div class="icon"><ion-icon name="heart-outline"></ion-icon></div>
-                            <div class="icon"><ion-icon name="bag-handle-outline"></ion-icon></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3 class="productName">Animi Dolor Pariatur</h3>
-                    <p class="gin">$19.00</p>
-                </div>
-            </div>
-
-
-            <div class="card">
-                <div class="cardImg">
-                    <img src="images/product-1.jpg" alt="Products">
-                    <div class="hoverEfect">
-                        <div class="icons">
-                            <div class="icon"><ion-icon name="add-outline"></ion-icon></div>
-                            <div class="icon"><ion-icon name="heart-outline"></ion-icon></div>
-                            <div class="icon"><ion-icon name="bag-handle-outline"></ion-icon></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3 class="productName">Animi Dolor Pariatur</h3>
-                    <p class="gin">$19.00</p>
-                </div>
-            </div>
-
-
-            <div class="card">
-                <div class="cardImg">
-                    <img src="images/product-1.jpg" alt="Products">
-                    <div class="hoverEfect">
-                        <div class="icons">
-                            <div class="icon"><ion-icon name="add-outline"></ion-icon></div>
-                            <div class="icon"><ion-icon name="heart-outline"></ion-icon></div>
-                            <div class="icon"><ion-icon name="bag-handle-outline"></ion-icon></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3 class="productName">Animi Dolor Pariatur</h3>
-                    <p class="gin">$19.00</p>
-                </div>
-            </div>
-        </div>
+        <div class="shopMainCont container"></div>
     </div>
 
 
     
+    <script>
+        const productLink = document.querySelectorAll('.filterProductName [aria-label]');
+        const shopMainCont = document.querySelector('.shopMainCont');
+
+        productLink.forEach((val) => {
+            val.addEventListener('click', () => {
+                productLink.forEach((val) => val.classList.remove('active'));
+                val.classList.add('active');
+                filterFunc(val);
+                drow();
+                console.log(arr);
+            });
+        })
+
+        const arr = [];
+        const arr2 = [];
+        class cards {
+            constructor(filterName, img, title, gin) {
+                this.filterName = filterName;
+                this.img = img;
+                this.title = title;
+                this.gin = gin;
+            }
+        }
+
+
+        function addArr() {
+            arr.push(
+                new cards('decoration', 'images/product-1.jpg', 'Animi Dolor Pariatur', '$19.00'),
+                new cards('accessory', 'images/product-2.jpg', 'Out of Stock', '$30.00'),
+                new cards('decoration', 'images/product-3.jpg', 'Art Deco Home', '$19.00'),
+                new cards('accessory', 'images/product-4.jpg', 'Artificial potted plant', '$40.00'),
+                new cards('accessory', 'images/product-5.jpg', 'Dark Green Jug', '$17.10'),
+                new cards('furniture', 'images/product-6.jpg', 'Drinking Glasses', '$21.00'),
+                new cards('accessory', 'images/product-7.jpg', 'Helen Chair', '$69.50'),
+                new cards('accessory', 'images/product-8.jpg', 'High Quality Glass', '$30.10'),
+                new cards('furniture', 'images/product-9.jpg', 'Living Room & Bedroom', '$45.00'),
+                new cards('furniture', 'images/product-10.jpg', 'Simple Chair', '$40.00'),
+                new cards('decoration', 'images/product-11.jpg', 'Smooth Disk', '$46.00'),
+                new cards('furniture', 'images/product-12.jpg', 'Table Black', '$67.00'),
+                new cards('furniture', 'images/product-13.jpg', 'Table Wood Pine', '$50.00'),
+                new cards('accessory', 'images/product-14.jpg', 'Teapot with black tea', '$25.00'),
+                new cards('decoration', 'images/product-15.jpg', 'Unique Decoration', '$15.00'),
+                new cards('decoration', 'images/product-16.jpg', 'Vase Of Flowers', '$77.00'),
+                new cards('decoration', 'images/product-17.jpg', 'Wood Eggs', '$19.00'),
+                new cards('decoration', 'images/product-18.jpg', 'Wooden Box', '$27.00'),
+                new cards('accessory', 'images/product-19.jpg', 'Wooden Cups', '$29.00'),
+                new cards('accessory', 'images/product-20.jpg', 'Soft Chair', '$55.00')
+            );
+        };
+
+        addArr();
+        function drow() {
+            arr.forEach((val) => {
+                // let label = val.filterName;
+                shopMainCont.innerHTML += `
+                    <div class="card" aria-label="${val.filterName}">
+                        <div class="cardImg">
+                            <img src="${val.img}" alt="Products">
+                            <div class="hoverEfect">
+                                <div class="icons">
+                                    <div class="icon"><ion-icon name="add-outline"></ion-icon></div>
+                                    <div class="icon"><ion-icon name="heart-outline"></ion-icon></div>
+                                    <div class="icon"><ion-icon name="bag-handle-outline"></ion-icon></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3 class="productName">${val.title}</h3>
+                            <p class="gin">${val.gin}</p>
+                        </div>
+                    </div>
+                `
+            })
+        }
+
+        drow()
+
+        function filterFunc(ariaL) {
+            shopMainCont.innerHTML = '';
+
+            return arr.filter((val) => {
+                if(val.filterName === ariaL) {
+                    return val;
+                }
+            })
+        }
+
+    </script>
+
     <!-- ion-icons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
