@@ -142,6 +142,11 @@
   color: var(--white);
 }
 
+
+.navCont > .nav-icons > i:hover > sub{
+  background-color: var(--smokey-black);
+}
+
 #responsiveMenu {
   display: none;
 }
