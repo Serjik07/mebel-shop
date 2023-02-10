@@ -280,10 +280,10 @@
             <h2 class="shopTitle">Popular Products</h2>
 
             <div class="filterProductName">
-                <p class="link active" aria-label="all">All Products</p><span>|</span>
-                <p class="link" aria-label="accessory">Accessory</p><span>|</span>
-                <p class="link" aria-label="decoration">Decoration</p><span>|</span>
-                <p class="link" aria-label="furniture">Furniture</p>
+                <p class="link active" data-filterBtn='all'>All Products</p><span>|</span>
+                <p class="link" data-filterBtn="accessory">Accessory</p><span>|</span>
+                <p class="link" data-filterBtn="decoration">Decoration</p><span>|</span>
+                <p class="link" data-filterBtn="furniture">Furniture</p>
             </div>
         </div>
 
@@ -293,21 +293,19 @@
 
     
     <script>
-        const productLink = document.querySelectorAll('.filterProductName [aria-label]');
+        const productLink = document.querySelectorAll('.filterProductName .link');
         const shopMainCont = document.querySelector('.shopMainCont');
 
         productLink.forEach((val) => {
             val.addEventListener('click', () => {
                 productLink.forEach((val) => val.classList.remove('active'));
                 val.classList.add('active');
-                filterFunc(val);
+                filterFunc(val.getAttribute('data-filterBtn'));
                 drow();
-                console.log(arr);
             });
         })
 
         const arr = [];
-        const arr2 = [];
         class cards {
             constructor(filterName, img, title, gin) {
                 this.filterName = filterName;
@@ -370,12 +368,12 @@
 
         drow()
 
+        let arr2 = [];
         function filterFunc(ariaL) {
             shopMainCont.innerHTML = '';
-
-            return arr.filter((val) => {
+            arr.filter((val) => {
                 if(val.filterName === ariaL) {
-                    return val;
+                    arr.push(val);
                 }
             })
         }
