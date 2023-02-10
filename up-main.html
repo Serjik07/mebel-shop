@@ -5,35 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
     <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        :root {
+        --red-orange-color-wheel: hsl(17, 96%, 48%);
+        --middle-blue-green: hsl(167, 45%, 72%);
+        --smokey-black: hsl(0, 0%, 7%);
+        --spanish-gray: hsl(0, 0%, 60%);
+        --granite-gray: hsl(0, 0%, 40%);
+        --tan-crayola: hsl(27, 46%, 58%);
+        --light-gray: hsl(0, 0%, 80%);
+        --black_10: hsla(0, 0%, 0%, 0.1);
+        --black_25: hsla(0, 0%, 0%, 0.25);
+        --black_50: hsla(0, 0%, 0%, 0.4);
+        --black_70: hsla(0, 0%, 0%, 0.7);
+        --cultured: hsl(220, 16%, 96%);
+        --manatee: hsl(218, 11%, 65%);
+        --black: hsl(0, 0%, 0%);
+        --white: hsl(0, 0%, 100%);
+    }
+
+        .section {
+            width: 100%;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1250px;
+            width: 100%;
+            display: flex;
+        }
+
         main {
             flex-direction: column;
+            gap: 50px;
         }
-        .main-up {
+        .title {
+           display: flex;
            flex-direction: column;
-           gap: 30px;
-           padding: 0 116px;
-           margin: 0 0 60px 0;
+           gap: 25px;
+           max-width: 800px;
+           width: 100%;
+           text-align: center;
         }
+
+        .title > h2 {
+            font-size: 2.5em;
+            color: var(--smokey-black);
+            font-weight: 100;
+        }
+
+        .title > p {
+            font-size: 1.1em;
+            color: var(--black_70);
+            line-height: 27px;
+        }
+
         .main-down{
            flex-direction: column;
            position: relative;
         }
-        .title{
-            text-align: center;
-            font-size: 25px;
-        }
+
         .main-paragraph{
             text-align: center;
         }
         .main-down > img {
             width: 100%;
+            max-height: 480px;
+            height: 100%;
         }
         .esim {
             background-color: rgba(0,0,0,0.50);
             position: absolute;
-            max-width: 1000px;
+            max-width: 100%;
             height: 100%;
             width: 100%;
         }
@@ -41,16 +96,13 @@
 </head>
 <body>
     <main class="section">
-        <div class="container main-up">
             <div class="title">
                 <h2>Woodex Store</h2>
-            </div>
-            <div class="main-paragraph">
-                When you start with a portait and search for a pure form, a clear volume, through successive 
+                <p>When you start with a portait and search for a pure form, a clear volume, through successive 
                 eliminations, you arrive inevitably at the agg. Likewise,starting with the egg and following
                 the same process in reverse, one finishes with the portait.
+                </p>
             </div>
-        </div>
         <div class="container main-down">
                 <img src="images/about-banner.jpg">
                 <div class="esim"></div>
