@@ -347,20 +347,21 @@
   }
 
   #responsiveMenu > .aside > .aside-main > .link {
-      width: 100%;
-      padding: 10px 0;
-      border-bottom: 2px solid var(--smokey-black);
-      cursor: pointer;
-      transition: all 0.5s;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
   }
 
   #responsiveMenu > .aside > .aside-main > .link:hover {
-      border-bottom: 2px solid var(--tan-crayola);
+      background-color: hsl(0, 0%, 97%);
   }
 
   #responsiveMenu > .aside > .aside-main > .link > span {
       color: var(--smokey-black);
-      font-size: 1.2em;
+      font-size: 1.5em;
   }
 
   #responsiveMenu > .aside > .aside-main > .link:hover > span {

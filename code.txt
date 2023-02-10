@@ -1,0 +1,116 @@
+@media screen and (max-width: 785px) {
+  .container {
+      max-width: 750px;
+      width: 100%;
+  }
+
+  .navCont > .links {
+      display: none;
+  }
+
+  .navCont > .links > li {
+      font-size: 1em;
+  }
+
+  #responsiveMenu {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      top: 0; left: 0;
+      z-index: 1000;
+      visibility: hidden;
+      transition: all 0.5s;
+  }
+
+  .nav-icons > .menuBtn {
+      display: block;
+  }
+
+  #responsiveMenu.active {
+      visibility: visible;
+  }
+
+  #responsiveMenu > .vse {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100vh;
+      background: var(--black_50);
+      z-index: -1;
+      transition: all 0.5s;
+      opacity: 0;
+  }
+
+  #responsiveMenu.active > .vse {
+      opacity: 1;
+  }
+
+  #responsiveMenu.active > .aside {
+      transform: translateX(0);
+  }
+
+  #responsiveMenu > .aside {
+      width: 400px;
+      height: 100vh;
+      background: var(--white);
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      transform: translateX(-100%);
+      transition: all 0.5s;
+  }
+
+  #responsiveMenu > .aside > .aside-up {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  #responsiveMenu > .aside > .aside-up > .logo > h3 {
+      font-size: 2em;
+      font-weight: normal;
+      color: var(--smokey-black);
+  }
+
+  #responsiveMenu > .aside > .aside-up > ion-icon {
+      font-size: 2.7em;
+      color: var(--smokey-black);
+      cursor: pointer;
+      transition: all 0.5s;
+  }
+
+  #responsiveMenu > .aside > .aside-up > ion-icon:hover {
+      transform: rotate(180deg);
+      color: var(--tan-crayola);
+  }
+
+  #responsiveMenu > .aside > .aside-main {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+  }
+
+  #responsiveMenu > .aside > .aside-main > .link {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+
+  #responsiveMenu > .aside > .aside-main > .link:hover {
+      background-color: hsl(0, 0%, 97%);
+  }
+
+  #responsiveMenu > .aside > .aside-main > .link > span {
+      color: var(--smokey-black);
+      font-size: 1.5em;
+  }
+
+  #responsiveMenu > .aside > .aside-main > .link:hover > span {
+      color: var(--tan-crayola);
+  }
+}
