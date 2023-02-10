@@ -91,17 +91,18 @@
 
 .navCont > .links > li::after {
   content: '';
-  width: 0%;
+  width: 100%;
   height: 2px;
   background: var(--tan-crayola);
-  display: block;
-  margin: auto;
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
   transition: all 0.5s ;
 }
 
 .navCont > .links > li:hover::after {
-  width: 100%;
-  left: 0;
+  transform: translateX(-50%) scale(1);
 }
 
 .navCont > .nav-icons {
