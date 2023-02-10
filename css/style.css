@@ -89,18 +89,17 @@
   position: relative;
 }
 
-.navCont > .links > li::before {
+.navCont > .links > li::after {
   content: '';
-  position: absolute;
-  bottom: -3px;
-  right: 0;
-  width: 0;
+  width: 0%;
   height: 2px;
-  background: var(--black_70);
-  transition: all 0.5s;
+  background: var(--tan-crayola);
+  display: block;
+  margin: auto;
+  transition: all 0.5s ;
 }
 
-.navCont > .links > li:hover:before {
+.navCont > .links > li:hover::after {
   width: 100%;
   left: 0;
 }
