@@ -63,25 +63,26 @@
   box-shadow: 0 0 10px 5px var(--black_10);
 }
 
-#nav > .navCont {
+#nav>.navCont {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
 }
 
-.navCont > .logo > h3 {
+.navCont>.logo>h3 {
+  cursor: pointer;
   font-size: 2em;
   font-weight: normal;
   color: var(--smokey-black);
 }
 
-.navCont > .links {
+.navCont>.links {
   display: flex;
   align-items: center;
   gap: 45px;
-} 
+}
 
-.navCont > .links > li {
+.navCont>.links>li {
   font-size: 1.1em;
   color: var(--smokey-black);
   list-style: none;
@@ -89,7 +90,7 @@
   position: relative;
 }
 
-.navCont > .links > li::after {
+.navCont>.links>li::after {
   content: '';
   width: 100%;
   height: 2px;
@@ -98,36 +99,36 @@
   bottom: -4px;
   left: 50%;
   transform: translateX(-50%) scale(0);
-  transition: all 0.5s ;
+  transition: all 0.5s;
 }
 
-.navCont > .links > li:hover::after {
+.navCont>.links>li:hover::after {
   transform: translateX(-50%) scale(1);
 }
 
-.navCont > .nav-icons {
+.navCont>.nav-icons {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
-.navCont > .nav-icons > i {
+.navCont>.nav-icons>i {
   font-size: 1.4em;
   cursor: pointer;
   color: var(--smokey-black);
   transition: all 0.5s;
 }
 
-.navCont > .nav-icons > i:hover {
+.navCont>.nav-icons>i:hover {
   color: var(--tan-crayola);
-} 
+}
 
-.navCont > .nav-icons > i:nth-child(2),
-.navCont > .nav-icons > i:nth-child(3) {
+.navCont>.nav-icons>i:nth-child(2),
+.navCont>.nav-icons>i:nth-child(3) {
   position: relative;
 }
 
-.navCont > .nav-icons > i > sub {
+.navCont>.nav-icons>i>sub {
   position: absolute;
   bottom: -8px;
   right: -8px;
@@ -142,11 +143,16 @@
   color: var(--white);
 }
 
+
+.navCont>.nav-icons>i:hover>sub {
+  background-color: var(--smokey-black);
+}
+
 #responsiveMenu {
   display: none;
 }
 
-.nav-icons > .menuBtn {
+.nav-icons>.menuBtn {
   display: none;
 }
 
@@ -158,7 +164,8 @@
   flex-direction: column;
   gap: 20px;
 }
-.heder-main-container > .someCont {
+
+.heder-main-container>.someCont {
   display: flex;
   flex-flow: row nowrap;
   gap: 20px;
@@ -166,31 +173,32 @@
 }
 
 .heder-main-container .someChild {
-  height: 100%; 
+  height: 100%;
   position: relative;
   padding: 40px 25px;
   overflow: hidden;
 }
 
-.heder-main-container .someChild > h3 {
+.heder-main-container .someChild>h3 {
   font-size: 1.5em;
   font-weight: normal;
   cursor: pointer;
   transition: all 0.5s;
 }
 
-.heder-main-container .someChild > h3:hover {
+.heder-main-container .someChild>h3:hover {
   color: var(--tan-crayola);
 }
 
-.heder-main-container .someChild > p {
+.heder-main-container .someChild>p {
   font-size: 1.1em;
   margin-top: 10px;
 }
 
-.heder-main-container .someChild > img {
+.heder-main-container .someChild>img {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -199,154 +207,211 @@
   transition: all 0.5s;
 }
 
-.heder-main-container .someChild:hover > img {
+.heder-main-container .someChild:hover>img {
   transform: scale(1.05);
 }
 
-.heder-main-container > .down > .someChild {
+.heder-main-container>.down>.someChild {
   height: 180px;
 }
 
-.heder-main-container > .up > .someChild {
+.heder-main-container>.up>.someChild {
   height: 400px;
 }
 
-.heder-main-container > .up > .norm {
+.heder-main-container>.up>.norm {
   width: 25%;
 }
 
-.heder-main-container > .up > .great {
+.heder-main-container>.up>.great {
   width: 50%;
 }
 
-.down > .down-card-header {
+.down>.down-card-header {
   width: 50%;
 }
+
+/* Main  */
+main {
+  flex-direction: column;
+  gap: 50px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 116px;
+  gap: 25px;
+  max-width: 830px;
+  width: 100%;
+  text-align: center;
+}
+
+.title>h2 {
+  font-family: 'Mr De Haviland', cursive;
+  ;
+  font-size: 4em;
+  color: var(--smokey-black);
+  font-weight: 100;
+}
+
+.title>p {
+  font-size: 1.1em;
+  color: var(--black_70);
+  line-height: 27px;
+}
+
+.main-down {
+  flex-direction: column;
+  position: relative;
+}
+
+.main-paragraph {
+  text-align: center;
+}
+
+.main-down>img {
+  width: 100%;
+  max-height: 480px;
+  height: 100%;
+}
+
+.esim {
+  background-color: rgba(0, 0, 0, 0.50);
+  position: absolute;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+}
+
 
 
 @media screen and (max-width: 1300px) {
   .container {
-      max-width: 1000px;
-      width: 100%;
+    max-width: 1000px;
+    width: 100%;
   }
 }
 
 
 @media screen and (max-width: 1000px) {
   .container {
-      max-width: 750px;
-      width: 100%;
+    max-width: 750px;
+    width: 100%;
   }
 
-  .navCont > .links {
-      gap: 20px;
+  .navCont>.links {
+    gap: 20px;
   }
 
-  .navCont > .links > li {
-      font-size: 1.1em;
+  .navCont>.links>li {
+    font-size: 1.1em;
   }
 
-  .heder-main-container > .up > .someChild {
-      max-width: calc(100% / 3);
-      width: 100%;
+  .heder-main-container>.up>.someChild {
+    max-width: calc(100% / 3);
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 785px) {
   .container {
-      max-width: 750px;
-      width: 100%;
+    max-width: 750px;
+    width: 100%;
   }
 
-  .navCont > .links {
-      display: none;
+  .navCont>.links {
+    display: none;
   }
 
-  .navCont > .links > li {
-      font-size: 1em;
+  .navCont>.links>li {
+    font-size: 1em;
   }
 
   #responsiveMenu {
-      display: flex;
-      width: 100%;
-      height: 100vh;
-      position: fixed;
-      top: 0; left: 0;
-      z-index: 1000;
-      visibility: hidden;
-      transition: all 0.5s;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    visibility: hidden;
+    transition: all 0.5s;
   }
 
-  .nav-icons > .menuBtn {
-      display: block;
+  .nav-icons>.menuBtn {
+    display: block;
   }
 
   #responsiveMenu.active {
-      visibility: visible;
+    visibility: visible;
   }
 
-  #responsiveMenu > .vse {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100vh;
-      background: var(--black_50);
-      z-index: -1;
-      transition: all 0.5s;
-      opacity: 0;
+  #responsiveMenu>.vse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--black_50);
+    z-index: -1;
+    transition: all 0.5s;
+    opacity: 0;
   }
 
-  #responsiveMenu.active > .vse {
-      opacity: 1;
+  #responsiveMenu.active>.vse {
+    opacity: 1;
   }
 
-  #responsiveMenu.active > .aside {
-      transform: translateX(0);
+  #responsiveMenu.active>.aside {
+    transform: translateX(0);
   }
 
-  #responsiveMenu > .aside {
-      width: 400px;
-      height: 100vh;
-      background: var(--white);
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      transform: translateX(-100%);
-      transition: all 0.5s;
+  #responsiveMenu>.aside {
+    width: 400px;
+    height: 100vh;
+    background: var(--white);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    transform: translateX(-100%);
+    transition: all 0.5s;
   }
 
-  #responsiveMenu > .aside > .aside-up {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+  #responsiveMenu>.aside>.aside-up {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  #responsiveMenu > .aside > .aside-up > .logo > h3 {
-      font-size: 2em;
-      font-weight: normal;
-      color: var(--smokey-black);
+  #responsiveMenu>.aside>.aside-up>.logo>h3 {
+    font-size: 2em;
+    font-weight: normal;
+    color: var(--smokey-black);
   }
 
-  #responsiveMenu > .aside > .aside-up > ion-icon {
-      font-size: 2.7em;
-      color: var(--smokey-black);
-      cursor: pointer;
-      transition: all 0.5s;
+  #responsiveMenu>.aside>.aside-up>ion-icon {
+    font-size: 2.7em;
+    color: var(--smokey-black);
+    cursor: pointer;
+    transition: all 0.5s;
   }
 
-  #responsiveMenu > .aside > .aside-up > ion-icon:hover {
-      transform: rotate(180deg);
-      color: var(--tan-crayola);
+  #responsiveMenu>.aside>.aside-up>ion-icon:hover {
+    transform: rotate(180deg);
+    color: var(--tan-crayola);
   }
 
-  #responsiveMenu > .aside > .aside-main {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
+  #responsiveMenu>.aside>.aside-main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
   }
 
-  #responsiveMenu > .aside > .aside-main > .link {
+  #responsiveMenu>.aside>.aside-main>.link {
     width: 100%;
     padding: 10px 0;
     font-size: 15px;
@@ -355,17 +420,17 @@
     transition: all 0.5s;
   }
 
-  #responsiveMenu > .aside > .aside-main > .link:hover {
-      background-color: rgb(238, 238, 238);
+  #responsiveMenu>.aside>.aside-main>.link:hover {
+    background-color: rgb(238, 238, 238);
   }
 
-  #responsiveMenu > .aside > .aside-main > .link > span {
-      color: var(--smokey-black);
-      font-size: 1.5em;
+  #responsiveMenu>.aside>.aside-main>.link>span {
+    color: var(--smokey-black);
+    font-size: 1.5em;
   }
 
-  #responsiveMenu > .aside > .aside-main > .link:hover > span {
-      color: var(--tan-crayola);
+  #responsiveMenu>.aside>.aside-main>.link:hover>span {
+    color: var(--tan-crayola);
   }
 }
 
@@ -375,20 +440,20 @@
     width: 100%;
   }
 
-  .heder-main-container > .someCont {
+  .heder-main-container>.someCont {
     flex-flow: row wrap;
   }
 
-  .heder-main-container > .someCont > .someChild {
+  .heder-main-container>.someCont>.someChild {
     max-width: 100%;
     width: 100%;
   }
 
-  .heder-main-container > .up > .norm {
+  .heder-main-container>.up>.norm {
     width: 240px;
   }
 
-  .heder-main-container > .up > .great {
+  .heder-main-container>.up>.great {
     order: 3;
     width: 100%;
   }
@@ -396,13 +461,25 @@
 }
 
 @media screen and (max-width: 558px) {
-  .heder-main-container > .up > .norm {
+  .heder-main-container>.up>.norm {
     width: 100%;
+  }
+  .title {
+    padding: 0 30px;
+  }
+
+  .title>h2 {
+    font-size: 3.7em;
+  }
+
+  .title>p {
+    font-size: 1em;
   }
 }
 
+
 @media screen and (max-width: 450px) {
-  #responsiveMenu > .aside {
+  #responsiveMenu>.aside {
     width: 100%;
   }
 }
