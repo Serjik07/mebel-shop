@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,16 +10,21 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Font-Aweson -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
 </head>
+
 <body>
     <header id="header" class="section">
-            
+
         <nav id="nav">
             <div class="navCont container">
-                <div class="logo"><h3>Woodex</h3></div>
+                <div class="logo">
+                    <h3>Woodex</h3>
+                </div>
 
                 <ul class="links">
                     <li>Hero</li>
@@ -74,7 +80,9 @@
         <div class="vse"></div>
         <div class="aside">
             <div class="aside-up">
-                <div class="logo"><h3>Woodex</h3></div>
+                <div class="logo">
+                    <h3>Woodex</h3>
+                </div>
                 <ion-icon name="close-outline" class="close"></ion-icon>
             </div>
 
@@ -87,7 +95,9 @@
             </div>
         </div>
     </div>
-    <main class="section">
+
+
+    <div class="about section">
         <div class="title">
             <h2>Woodex Store</h2>
             <p>When you start with a portait and search for a pure form, a clear volume, through successive
@@ -97,26 +107,31 @@
         </div>
         <div class="container main-down">
             <img src="images/about-banner.jpg">
-            <div class="esim"></div>
+            <div class="esim"><ion-icon name="play-circle-outline"></ion-icon></div>
         </div>
-        <div id="shops" class="section">
-            <div class="shopContUp container">
-                <h2 class="shopTitle">Popular Products</h2>
+    </div>
+
+    <div id="shops" class="section">
+        <div class="shopContUp container">
+            <h2 class="shopTitle">Popular Products</h2>
+            <div class="right-aside">
+
                 <div class="search">
-                    <input type="text" id="shop-search" placeholder="Search Product...">
+                    <input type="text" id="shop-search" maxlength="40" placeholder="Search Product...">
                     <button id="shopBtn">Search</button>
                 </div>
+
                 <div class="filterProductName">
-                    <p class="link active" aria-label="all">All Products</p><span>|</span>
-                    <p class="link" aria-label="accessory">Accessory</p><span>|</span>
-                    <p class="link" aria-label="decoration">Decoration</p><span>|</span>
-                    <p class="link" aria-label="furniture">Furniture</p>
+                    <p class="link active" data-filterBtn="all">All Products</p><span>|</span>
+                    <p class="link" data-filterBtn="accessory">Accessory</p><span>|</span>
+                    <p class="link" data-filterBtn="decoration">Decoration</p><span>|</span>
+                    <p class="link" data-filterBtn="furniture">Furniture</p>
                 </div>
             </div>
-    
-            <div class="shopMainCont container"></div>
         </div>
-    </main>
+
+        <div class="shopMainCont container"></div>
+    </div>
 
     <script defer src="js/script.js"></script>
 
@@ -124,4 +139,5 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
