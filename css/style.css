@@ -375,7 +375,7 @@
   }
 
   .heder-main-container > .someCont {
-    flex-direction: column;
+    flex-flow: row wrap;
   }
 
   .heder-main-container > .someCont > .someChild {
@@ -383,6 +383,21 @@
     width: 100%;
   }
 
+  .heder-main-container > .up > .norm {
+    width: 240px;
+  }
+
+  .heder-main-container > .up > .great {
+    order: 3;
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 558px) {
+  .heder-main-container > .up > .norm {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 450px) {
