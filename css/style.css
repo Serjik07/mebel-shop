@@ -356,7 +356,7 @@
   }
 
   #responsiveMenu > .aside > .aside-main > .link:hover {
-      background-color: hsl(0, 0%, 97%);
+      background-color: rgb(238, 238, 238);
   }
 
   #responsiveMenu > .aside > .aside-main > .link > span {
