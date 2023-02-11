@@ -1,116 +1,351 @@
-@media screen and (max-width: 785px) {
-  .container {
-      max-width: 750px;
-      width: 100%;
-  }
+const responsiveMenu = document.querySelector('#responsiveMenu');
+const menuBtn = document.querySelector('.menuBtn');
+const nav = document.querySelector('#nav');
+const close = document.querySelector('.close');
+const links = document.querySelectorAll('.aside-main .link');
+const vse = document.querySelector('.vse');
+// SCROLL EVECT WITH NUV
 
-  .navCont > .links {
-      display: none;
-  }
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('active', window.scrollY > 60)
+})
 
-  .navCont > .links > li {
-      font-size: 1em;
-  }
+// OPEN RESP_MENU
 
-  #responsiveMenu {
-      display: flex;
-      width: 100%;
-      height: 100vh;
-      position: fixed;
-      top: 0; left: 0;
-      z-index: 1000;
-      visibility: hidden;
-      transition: all 0.5s;
-  }
+menuBtn.addEventListener('click', () => {
+    responsiveMenu.classList.toggle('active');
+    document.body.style.overflowY = 'hidden';
+})
 
-  .nav-icons > .menuBtn {
-      display: block;
-  }
 
-  #responsiveMenu.active {
-      visibility: visible;
-  }
+// CLOSE RESP_MENU
 
-  #responsiveMenu > .vse {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100vh;
-      background: var(--black_50);
-      z-index: -1;
-      transition: all 0.5s;
-      opacity: 0;
-  }
-
-  #responsiveMenu.active > .vse {
-      opacity: 1;
-  }
-
-  #responsiveMenu.active > .aside {
-      transform: translateX(0);
-  }
-
-  #responsiveMenu > .aside {
-      width: 400px;
-      height: 100vh;
-      background: var(--white);
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      transform: translateX(-100%);
-      transition: all 0.5s;
-  }
-
-  #responsiveMenu > .aside > .aside-up {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-  }
-
-  #responsiveMenu > .aside > .aside-up > .logo > h3 {
-      font-size: 2em;
-      font-weight: normal;
-      color: var(--smokey-black);
-  }
-
-  #responsiveMenu > .aside > .aside-up > ion-icon {
-      font-size: 2.7em;
-      color: var(--smokey-black);
-      cursor: pointer;
-      transition: all 0.5s;
-  }
-
-  #responsiveMenu > .aside > .aside-up > ion-icon:hover {
-      transform: rotate(180deg);
-      color: var(--tan-crayola);
-  }
-
-  #responsiveMenu > .aside > .aside-main {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-  }
-
-  #responsiveMenu > .aside > .aside-main > .link {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 15px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.5s;
-  }
-
-  #responsiveMenu > .aside > .aside-main > .link:hover {
-      background-color: hsl(0, 0%, 97%);
-  }
-
-  #responsiveMenu > .aside > .aside-main > .link > span {
-      color: var(--smokey-black);
-      font-size: 1.5em;
-  }
-
-  #responsiveMenu > .aside > .aside-main > .link:hover > span {
-      color: var(--tan-crayola);
-  }
+function closeMenu() {
+    responsiveMenu.classList.remove('active');
+    document.body.style.overflowY = 'auto';
 }
+
+close.addEventListener('click', closeMenu);
+vse.addEventListener('click', closeMenu);
+
+links.forEach((val) => {
+    val.addEventListener('click', closeMenu);
+})
+
+// main-CARDS
+
+
+const filterrs = document.querySelectorAll(".link");
+const mainCont = document.querySelector(".shopMainCont");
+const shopInput = document.querySelector("#shop-search");
+const shopBtn = document.querySelector("#shopBtn");
+
+shopBtn.addEventListener("click",searchFilter);
+function searchFilter() {
+    searchText = shopInput.value.toLowerCase();
+    debugger;
+    mainCont.innerHTML = "";
+    arr.forEach((obj) => {
+        if(obj.title.toLowerCase().indexOf(searchText) != -1) {
+            mainCont.innerHTML += `
+            <div class="card" aria-label="${obj.filterName}">
+                <div class="cardImg">
+                    <img src="${obj.img}" alt="Products">
+                    <div class="hoverEfect">
+                        <div class="icons">
+                            <div class="icon"><ion-icon name="add-outline"></ion-icon></div>
+                            <div class="icon"><ion-icon name="heart-outline"></ion-icon></div>
+                            <div class="icon"><ion-icon name="bag-handle-outline"></ion-icon></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3 class="productName">${obj.title}</h3>
+                    <p class="gin">${obj.gin}</p>
+                </div>
+            </div>
+        `
+        }
+    });
+}
+
+filterrs.forEach(function (element) {
+    let text = element.innerHTML;
+    if (text === "All Products") {
+        element.addEventListener("click", filterAllProducts)
+    } else if (text === "Accessory") {
+        element.addEventListener("click", filterAccessory);
+    } else if (text === "Decoration") {
+        element.addEventListener("click", filterDecoration);
+    } else if (text === "Furniture") {
+        element.addEventListener("click", filterFurniture);
+    }
+})
+function filterAllProducts() {
+    draw();
+};
+function filterAccessory() {
+    mainCont.innerHTML = "";
+    debugger;
+    arr.forEach(function (obj) {
+        if (obj.filterName === "accessory") {
+            mainCont.innerHTML += `
+                    <div class="card" aria-label="${obj.filterName}">
+                        <div class="cardImg">
+                            <img src="${obj.img}" alt="Products">
+                            <div class="hoverEfect">
+                                <div class="icons">
+                                    <div class="icon"><ion-icon name="add-outline"></ion-icon></div>
+                                    <div class="icon"><ion-icon name="heart-outline"></ion-icon></div>
+                                    <div class="icon"><ion-icon name="bag-handle-outline"></ion-icon></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3 class="productName">${obj.title}</h3>
+                            <p class="gin">${obj.gin}</p>
+                        </div>
+                    </div>
+                `
+        };
+    });
+}
+function filterDecoration() {
+    mainCont.innerHTML = "";
+    arr.forEach(function (obj) {
+        if (obj.filterName === "decoration") {
+            mainCont.innerHTML += `
+                    <div class="card" aria-label="${obj.filterName}">
+                        <div class="cardImg">
+                            <img src="${obj.img}" alt="Products">
+                            <div class="hoverEfect">
+                                <div class="icons">
+                                    <div class="icon"><ion-icon name="add-outline"></ion-icon></div>
+                                    <div class="icon"><ion-icon name="heart-outline"></ion-icon></div>
+                                    <div class="icon"><ion-icon name="bag-handle-outline"></ion-icon></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3 class="productName">${obj.title}</h3>
+                            <p class="gin">${obj.gin}</p>
+                        </div>
+                    </div>
+                `
+        };
+    });
+}
+function filterFurniture() {
+    mainCont.innerHTML = "";
+    debugger;
+    arr.forEach(function (obj) {
+        if (obj.filterName === "furniture") {
+            mainCont.innerHTML += `
+                    <div class="card" aria-label="${obj.filterName}">
+                        <div class="cardImg">
+                            <img src="${obj.img}" alt="Products">
+                            <div class="hoverEfect">
+                                <div class="icons">
+                                    <div class="icon"><ion-icon name="add-outline"></ion-icon></div>
+                                    <div class="icon"><ion-icon name="heart-outline"></ion-icon></div>
+                                    <div class="icon"><ion-icon name="bag-handle-outline"></ion-icon></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3 class="productName">${obj.title}</h3>
+                            <p class="gin">${obj.gin}</p>
+                        </div>
+                    </div>
+                `
+        };
+    });
+}
+console.log(filterrs);
+let arr = [];
+class cards {
+    constructor(filterName, img, title, gin) {
+        this.filterName = filterName;
+        this.img = img;
+        this.title = title;
+        this.gin = gin;
+    }
+}
+
+
+arr = [
+    new cards('decoration', 'images/product-1.jpg', 'Animi Dolor Pariatur', '$19.00'),
+    new cards('accessory', 'images/product-2.jpg', 'Out of Stock', '$30.00'),
+    new cards('decoration', 'images/product-3.jpg', 'Art Deco Home', '$19.00'),
+    new cards('accessory', 'images/product-4.jpg', 'Artificial potted plant', '$40.00'),
+    new cards('accessory', 'images/product-5.jpg', 'Dark Green Jug', '$17.10'),
+    new cards('furniture', 'images/product-6.jpg', 'Drinking Glasses', '$21.00'),
+    new cards('accessory', 'images/product-7.jpg', 'Helen Chair', '$69.50'),
+    new cards('accessory', 'images/product-8.jpg', 'High Quality Glass', '$30.10'),
+    new cards('furniture', 'images/product-9.jpg', 'Living Room & Bedroom', '$45.00'),
+    new cards('furniture', 'images/product-10.jpg', 'Simple Chair', '$40.00'),
+    new cards('decoration', 'images/product-11.jpg', 'Smooth Disk', '$46.00'),
+    new cards('furniture', 'images/product-12.jpg', 'Table Black', '$67.00'),
+    new cards('furniture', 'images/product-13.jpg', 'Table Wood Pine', '$50.00'),
+    new cards('accessory', 'images/product-14.jpg', 'Teapot with black tea', '$25.00'),
+    new cards('decoration', 'images/product-15.jpg', 'Unique Decoration', '$15.00'),
+    new cards('decoration', 'images/product-16.jpg', 'Vase Of Flowers', '$77.00'),
+    new cards('decoration', 'images/product-17.jpg', 'Wood Eggs', '$19.00'),
+    new cards('decoration', 'images/product-18.jpg', 'Wooden Box', '$27.00'),
+    new cards('accessory', 'images/product-19.jpg', 'Wooden Cups', '$29.00'),
+    new cards('accessory', 'images/product-20.jpg', 'Soft Chair', '$55.00')
+];
+
+function draw() {
+    mainCont.innerHTML = "";
+    arr.forEach((val) => {
+        // let label = val.filterName;
+        mainCont.innerHTML += `
+                    <div class="card" aria-label="${val.filterName}">
+                        <div class="cardImg">
+                            <img src="${val.img}" alt="Products">
+                            <div class="hoverEfect">
+                                <div class="icons">
+                                    <div class="icon"><ion-icon name="add-outline"></ion-icon></div>
+                                    <div class="icon"><ion-icon name="heart-outline"></ion-icon></div>
+                                    <div class="icon"><ion-icon name="bag-handle-outline"></ion-icon></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3 class="productName">${val.title}</h3>
+                            <p class="gin">${val.gin}</p>
+                        </div>
+                    </div>
+                `
+    })
+}
+draw();
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mebel-shop</title>
+    <link rel="icon" href="favicon.svg" sizes="16*16">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font-Aweson -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <header id="header" class="section">
+            
+        <nav id="nav">
+            <div class="navCont container">
+                <div class="logo"><h3>Woodex</h3></div>
+
+                <ul class="links">
+                    <li>Hero</li>
+                    <li>Blog</li>
+                    <li>Shop</li>
+                    <li>About Us</li>
+                    <li>Contact</li>
+                </ul>
+
+                <div class="nav-icons">
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                    <i class="fa fa-heart" aria-hidden="true"><sub>0</sub></i>
+                    <i class="fa fa-shopping-bag" aria-hidden="true"><sub>0</sub></i>
+                    <i class="fa fa-bars menuBtn" aria-hidden="true"></i>
+                </div>
+            </div>
+        </nav>
+
+        <div class="heder-main-container container">
+            <div class="up someCont">
+                <div class="norm someChild">
+                    <h3 class="header-card-title">Art Deco Home</h3>
+                    <p class="header-card-paragraph">Decoration</p>
+                    <img src="images/hero-product-1.jpg">
+                </div>
+                <div class="great someChild">
+                    <h3 class="header-card-title">Helen Chair</h3>
+                    <p class="header-card-paragraph">Decoration</p>
+                    <img src="images/hero-product-2.jpg">
+                </div>
+                <div class="norm someChild">
+                    <h3 class="header-card-title">Vase Of Flowrs</h3>
+                    <p class="header-card-paragraph">Decoration</p>
+                    <img src="images/hero-product-3.jpg">
+                </div>
+            </div>
+            <div class="down someCont">
+                <div class="down-card-header someChild">
+                    <h3 class="header-card-title">Wood Eggs</h3>
+                    <p class="header-card-paragraph">Decoration</p>
+                    <img src="images/hero-product-4.jpg">
+                </div>
+                <div class="down-card-header someChild">
+                    <h3 class="header-card-title">Table Wood Pine</h3>
+                    <p class="header-card-paragraph">Decoration</p>
+                    <img src="images/hero-product-5.jpg">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="responsiveMenu">
+        <div class="vse"></div>
+        <div class="aside">
+            <div class="aside-up">
+                <div class="logo"><h3>Woodex</h3></div>
+                <ion-icon name="close-outline" class="close"></ion-icon>
+            </div>
+
+            <div class="aside-main">
+                <div class="link"><span>Hero</span></div>
+                <div class="link"><span>Blog</span></div>
+                <div class="link"><span>Shop</span></div>
+                <div class="link"><span>About Us</span></div>
+                <div class="link"><span>Contact</span></div>
+            </div>
+        </div>
+    </div>
+    <main class="section">
+        <div class="title">
+            <h2>Woodex Store</h2>
+            <p>When you start with a portait and search for a pure form, a clear volume, through successive
+                eliminations, you arrive inevitably at the agg. Likewise,starting with the egg and following
+                the same process in reverse, one finishes with the portait.
+            </p>
+        </div>
+        <div class="container main-down">
+            <img src="images/about-banner.jpg">
+            <div class="esim"></div>
+        </div>
+        <div id="shops" class="section">
+            <div class="shopContUp container">
+                <h2 class="shopTitle">Popular Products</h2>
+                <div class="search">
+                    <input type="text" id="shop-search" placeholder="Search Product...">
+                    <button id="shopBtn">Search</button>
+                </div>
+                <div class="filterProductName">
+                    <p class="link active" aria-label="all">All Products</p><span>|</span>
+                    <p class="link" aria-label="accessory">Accessory</p><span>|</span>
+                    <p class="link" aria-label="decoration">Decoration</p><span>|</span>
+                    <p class="link" aria-label="furniture">Furniture</p>
+                </div>
+            </div>
+    
+            <div class="shopMainCont container"></div>
+        </div>
+    </main>
+
+    <script defer src="js/script.js"></script>
+
+    <!-- ion-icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
