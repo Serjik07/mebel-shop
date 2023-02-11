@@ -490,7 +490,7 @@
 .upSection {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
   max-width: 1000px;
   width: 100%;
 }
@@ -506,24 +506,31 @@
 .inputs > button {
   max-width: 150px;
   width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border:none;
+  background-color: var(--tan-crayola);
+  color: #000;
+  cursor: pointer;
+  transition: all 0.5s;
 }
-input {
+.inputs > button:hover{
+  background-color: #000;
+  color: var(--tan-crayola);
+}
+.inputs > input,select {
   height: 40px;
   padding: 10px 20px;
   width: 100%;
   border: 1px double hsl(27deg 39% 42%);
   outline: none;
 }
-.a{
-  box-shadow: 0px 0px 9px 3px hsl(27deg 48% 62%);
-  -webkit-box-shadow: 0px 0px 9px 3px hsl(27deg 48% 62%);
-  -moz-box-shadow: 0px 0px 9px 3px hsl(27deg 48% 62%);
+.inputs > input:focus, select:focus {
+  box-shadow: 0px 0px 9px 2px hsl(27deg 48% 62%);
+  -webkit-box-shadow: 0px 0px 9px 2px hsl(27deg 48% 62%);
+  -moz-box-shadow: 0px 0px 9px 2px hsl(27deg 48% 62%);
 }
-input:focus {
-  box-shadow: 0px 0px 9px 3px hsl(27deg 48% 62%);
-  -webkit-box-shadow: 0px 0px 9px 3px hsl(27deg 48% 62%);
-  -moz-box-shadow: 0px 0px 9px 3px hsl(27deg 48% 62%);
-}
+
 @media screen and (max-width: 1300px) {
   .container {
     max-width: 1000px;

@@ -79,7 +79,7 @@ let b;
 
 
 
-class cards {
+class Cards {
     constructor(filterName, img, title, gin) {
         this.filterName = filterName;
         this.img = img;
@@ -90,26 +90,26 @@ class cards {
 
 function addArr() {
     arr = [
-        new cards('decoration', 'images/product-1.jpg', 'Animi Dolor Pariatur', '$19.00'),
-        new cards('accessory', 'images/product-2.jpg', 'Out of Stock', '$30.00'),
-        new cards('decoration', 'images/product-3.jpg', 'Art Deco Home', '$19.00'),
-        new cards('accessory', 'images/product-4.jpg', 'Artificial potted plant', '$40.00'),
-        new cards('accessory', 'images/product-5.jpg', 'Dark Green Jug', '$17.10'),
-        new cards('furniture', 'images/product-6.jpg', 'Drinking Glasses', '$21.00'),
-        new cards('accessory', 'images/product-7.jpg', 'Helen Chair', '$69.50'),
-        new cards('accessory', 'images/product-8.jpg', 'High Quality Glass', '$30.10'),
-        new cards('furniture', 'images/product-9.jpg', 'Living Room & Bedroom', '$45.00'),
-        new cards('furniture', 'images/product-10.jpg', 'Simple Chair', '$40.00'),
-        new cards('decoration', 'images/product-11.jpg', 'Smooth Disk', '$46.00'),
-        new cards('furniture', 'images/product-12.jpg', 'Table Black', '$67.00'),
-        new cards('furniture', 'images/product-13.jpg', 'Table Wood Pine', '$50.00'),
-        new cards('accessory', 'images/product-14.jpg', 'Teapot with black tea', '$25.00'),
-        new cards('decoration', 'images/product-15.jpg', 'Unique Decoration', '$15.00'),
-        new cards('decoration', 'images/product-16.jpg', 'Vase Of Flowers', '$77.00'),
-        new cards('decoration', 'images/product-17.jpg', 'Wood Eggs', '$19.00'),
-        new cards('decoration', 'images/product-18.jpg', 'Wooden Box', '$27.00'),
-        new cards('accessory', 'images/product-19.jpg', 'Wooden Cups', '$29.00'),
-        new cards('accessory', 'images/product-20.jpg', 'Soft Chair', '$55.00')
+        new Cards('decoration', 'images/product-1.jpg', 'Animi Dolor Pariatur', '$19.00'),
+        new Cards('accessory', 'images/product-2.jpg', 'Out of Stock', '$30.00'),
+        new Cards('decoration', 'images/product-3.jpg', 'Art Deco Home', '$19.00'),
+        new Cards('accessory', 'images/product-4.jpg', 'Artificial potted plant', '$40.00'),
+        new Cards('accessory', 'images/product-5.jpg', 'Dark Green Jug', '$17.10'),
+        new Cards('furniture', 'images/product-6.jpg', 'Drinking Glasses', '$21.00'),
+        new Cards('accessory', 'images/product-7.jpg', 'Helen Chair', '$69.50'),
+        new Cards('accessory', 'images/product-8.jpg', 'High Quality Glass', '$30.10'),
+        new Cards('furniture', 'images/product-9.jpg', 'Living Room & Bedroom', '$45.00'),
+        new Cards('furniture', 'images/product-10.jpg', 'Simple Chair', '$40.00'),
+        new Cards('decoration', 'images/product-11.jpg', 'Smooth Disk', '$46.00'),
+        new Cards('furniture', 'images/product-12.jpg', 'Table Black', '$67.00'),
+        new Cards('furniture', 'images/product-13.jpg', 'Table Wood Pine', '$50.00'),
+        new Cards('accessory', 'images/product-14.jpg', 'Teapot with black tea', '$25.00'),
+        new Cards('decoration', 'images/product-15.jpg', 'Unique Decoration', '$15.00'),
+        new Cards('decoration', 'images/product-16.jpg', 'Vase Of Flowers', '$77.00'),
+        new Cards('decoration', 'images/product-17.jpg', 'Wood Eggs', '$19.00'),
+        new Cards('decoration', 'images/product-18.jpg', 'Wooden Box', '$27.00'),
+        new Cards('accessory', 'images/product-19.jpg', 'Wooden Cups', '$29.00'),
+        new Cards('accessory', 'images/product-20.jpg', 'Soft Chair', '$55.00')
     ];
 };
 
@@ -165,4 +165,42 @@ function filterFunc(ariaL) {
     });
 
     return b;
+}
+
+
+
+                                    // Add
+
+const inputs = document.querySelectorAll(".inputs input, .inputs select");
+const addBtn = document.querySelector(".inputs button");
+
+addBtn.addEventListener("click",addCard)
+
+function addCard() {
+    let newName;
+    let newType;
+    let newImgUrl;
+    let newPrice;
+    inputs.forEach((input) => {
+        if(input.name === "name") {
+            newName = input;
+        } else if(input.name === "type") {
+            newType = input;
+        } else if(input.name === "price") {
+            newPrice = input;
+        } else if(input.name === "imgurl") {
+            newImgUrl = input;
+        }
+    });
+    if(!(newName.value === "" || newImgUrl.value === "" || newName.value === "" || newPrice.value  === "")) {
+        console.log(newName,newImgUrl,newPrice,newType)
+        arr.push(new Cards(newType.value,newImgUrl.value,newName.value,newPrice.value));
+        drow(arr);
+        newName.value = "";
+        newPrice.value = "";
+        newType.value = "";
+        newImgUrl.value = "";  
+    } else {
+        alert("All fields must be filled (:");
+    }
 }
