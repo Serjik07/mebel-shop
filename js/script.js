@@ -192,6 +192,7 @@ function addCard() {
             newImgUrl = input;
         }
     });
+    
     if(!(newName.value === "" || newImgUrl.value === "" || newName.value === "" || newPrice.value  === "")) {
         console.log(newName,newImgUrl,newPrice,newType)
         arr.push(new Cards(newType.value,newImgUrl.value,newName.value,newPrice.value));
