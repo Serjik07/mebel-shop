@@ -238,7 +238,7 @@
   gap: 60px;
 }
 
-.title {
+.about > .title {
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -248,14 +248,14 @@
   text-align: center;
 }
 
-.title > h2 {
+.about > .title > h2 {
   font-family: 'Mr De Haviland', cursive;
   font-size: 3.5em;
   color: var(--smokey-black);
   font-weight: 100;
 }
 
-.title > p {
+.about > .title > p {
   font-size: 1.1em;
   color: var(--black_70);
   line-height: 27px;
@@ -297,7 +297,9 @@
   color: var(--white);
 }
 
-/*Main cards  */
+
+
+                                /*Shops*/
 #shops {
   flex-direction: column;
   gap: 70px;
@@ -380,6 +382,54 @@
   color: var(--tan-crayola);
 }
 
+
+.addProduct {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.addProduct > h2 {
+  text-align: center;
+  font-size: 2em;
+  color: var(--smokey-black);
+}
+
+.inputs {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  gap: 30px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.inputs > input,select {
+  padding: 15px 20px;
+  width:  calc(50% - 15px);
+  border: 1px solid var(--black);
+  font-size: 1.1em;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.05);
+  outline: none;
+}
+
+.inputs > button {
+  padding: 15px 40px;
+  border-radius: 5px;
+  font-size: 18px;
+  border:none;
+  background-color: var(--tan-crayola);
+  color: #000;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.inputs > button:hover{
+  background-color: #000;
+  color: var(--tan-crayola);
+}
 
 
 .shopMainCont {
@@ -485,62 +535,127 @@
   color: var(--smokey-black);
 }
 
-                                  /*Add Card  */
 
-.upSection {
-  display: flex;
+
+                                /*blog*/
+
+.blog {
   flex-direction: column;
-  gap: 40px;
-  max-width: 1000px;
-  width: 100%;
+  gap: 60px;
 }
-.upSection > h2 {
-  text-align: center;
+
+.blog > .title {
+  justify-content: space-between;
+  align-items: center;
 }
-.inputs {
+
+.blog > .title > h2 {
+  font-size: 2.2em;
+  font-weight: normal;
+  color: var(--smokey-black);
+}
+
+.blog > .title > span {
+  font-size: 1.1em;
+  color: var(--smokey-black);
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-}
-.inputs > button {
-  max-width: 150px;
-  width: 100%;
-  height: 40px;
-  border-radius: 5px;
-  border:none;
-  background-color: var(--tan-crayola);
-  color: #000;
+  align-items: center;
+  align-content: center;
   cursor: pointer;
   transition: all 0.5s;
 }
-.inputs > button:hover{
-  background-color: #000;
+
+.blog > .title > span:hover {
   color: var(--tan-crayola);
 }
-.inputs > input,select {
-  height: 40px;
-  padding: 10px 20px;
+
+.blog > .title > span > ion-icon {
+  font-size: 1.3em;
+}
+
+.blogCards {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 25px;
+}
+
+.blogCards > .card {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.blogCards > .card > .img {
   width: 100%;
-  border: 1px double hsl(27deg 39% 42%);
-  outline: none;
-}
-.inputs > input:focus, select:focus {
-  box-shadow: 0px 0px 9px 2px hsl(27deg 48% 62%);
-  -webkit-box-shadow: 0px 0px 9px 2px hsl(27deg 48% 62%);
-  -moz-box-shadow: 0px 0px 9px 2px hsl(27deg 48% 62%);
+  height: 280px;
+  position: relative;
+  overflow: hidden;
 }
 
-@media screen and (max-width: 1300px) {
-  .container {
-    max-width: 1000px;
-    width: 100%;
-  }
-
-  .shopMainCont > .card {
-      width: 313px;
-  }
+.blogCards > .card > .img > img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
 }
+
+.blogCards > .card > .img > .read {
+  position: absolute;
+  bottom: 0;
+  right: -100%;
+  padding: 10px 30px;
+  background: var(--white);
+  box-shadow: 0 0 5px 2px var(--black_10);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.5s;
+}
+
+.blogCards > .card > .img:hover > .read {
+  right: 0;
+  transition: all 0.5s;
+}
+
+.blogCards > .card > .img > .read:hover > span,
+.blogCards > .card > .img > .read:hover > ion-icon {
+  color: var(--tan-crayola);
+  transition: all 0.5s;
+}
+
+.blogCards > .card > .img > .read > ion-cion {
+  font-size: 1.3em;
+  color: var(--smokey-black);
+}
+
+.blogCards > .card > .content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.blogCards > .card > .content > h3 {
+  font-size: 1.3em;
+  font-weight: normal;
+  color: var(--smokey-black);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.blogCards > .card > .content > h3:hover {
+  color: var(--tan-crayola);
+}
+
+.blogCards > .card > .content > .paragraph {
+  display: flex;
+  gap: 13px;
+}
+
+.blogCards > .card > .content > .paragraph > span {
+  color: var(--smokey-black);
+}
+
 
                                 /*Footer*/
 
@@ -558,11 +673,24 @@ footer > .container {
 }
 #footer-p{
   font-size: 20px;
+  text-align: center;
   color: #fff;
 } 
 #footer-p > span {
   color: hsl(27deg 48% 62%);
 }
+
+@media screen and (max-width: 1300px) {
+  .container {
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  .shopMainCont > .card {
+      width: 313px;
+  }
+}
+
 @media screen and (max-width: 1060px) {
   .container {
     max-width: 750px;
@@ -590,6 +718,16 @@ footer > .container {
   .shopMainCont {
     justify-content: space-between;
   } 
+
+    .blogCards {
+      justify-content: space-between;
+      flex-flow: row wrap;
+      gap: 50px;
+  }
+
+  .blogCards > .card {
+      width: 340px;
+  }
 }
 
 
@@ -710,6 +848,10 @@ footer > .container {
   #responsiveMenu > .aside > .aside-main > .link:hover>span {
     color: var(--tan-crayola);
   }
+
+  .blogCards > .card {
+    width: 300px;
+  }
 }
 
 
@@ -757,6 +899,30 @@ footer > .container {
 
   .shopMainCont > .card  > .cardImg {
     height: 230px;
+  }
+
+  
+  .blogCards > .card {
+    width: 100%;
+  }
+
+  .blogCards > .card > .img {
+    max-height: 400px;
+    height: 100%;
+  }
+
+  .inputs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  
+  .inputs > input, .inputs > select {
+    width: 100%;
+  }
+
+  .inputs > button {
+    width: 220px;
   }
 }
 
