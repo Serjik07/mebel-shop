@@ -40,13 +40,12 @@ const shopMainCont = document.querySelector('.shopMainCont');
 const shopInput = document.querySelector("#shop-search");
 const shopBtn = document.querySelector("#shopBtn");
 
-shopBtn.addEventListener("click",searchFilter);
+shopBtn.addEventListener("click", searchFilter);
 function searchFilter() {
     searchText = shopInput.value.toLowerCase();
-    debugger;
     shopMainCont.innerHTML = "";
     arr.forEach((obj) => {
-        if(obj.title.toLowerCase().indexOf(searchText) != -1) {
+        if (obj.title.toLowerCase().indexOf(searchText) != -1) {
             shopMainCont.innerHTML += `
             <div class="card" aria-label="${obj.filterName}">
                 <div class="cardImg">
@@ -78,7 +77,7 @@ const productLink = document.querySelectorAll('.filterProductName [data-filterBt
 let arr = [];
 let b;
 
-console.log(typeof shopMainContCard)
+
 
 class cards {
     constructor(filterName, img, title, gin) {
@@ -90,33 +89,34 @@ class cards {
 }
 
 function addArr() {
-    arr.push(
-        new cards('all decoration', 'images/product-1.jpg', 'Animi Dolor Pariatur', '$19.00'),
-        new cards('all accessory', 'images/product-2.jpg', 'Out of Stock', '$30.00'),
-        new cards('all decoration', 'images/product-3.jpg', 'Art Deco Home', '$19.00'),
-        new cards('all accessory', 'images/product-4.jpg', 'Artificial potted plant', '$40.00'),
-        new cards('all accessory', 'images/product-5.jpg', 'Dark Green Jug', '$17.10'),
-        new cards('all furniture', 'images/product-6.jpg', 'Drinking Glasses', '$21.00'),
-        new cards('all accessory', 'images/product-7.jpg', 'Helen Chair', '$69.50'),
-        new cards('all accessory', 'images/product-8.jpg', 'High Quality Glass', '$30.10'),
-        new cards('all furniture', 'images/product-9.jpg', 'Living Room & Bedroom', '$45.00'),
-        new cards('all furniture', 'images/product-10.jpg', 'Simple Chair', '$40.00'),
-        new cards('all decoration', 'images/product-11.jpg', 'Smooth Disk', '$46.00'),
-        new cards('all furniture', 'images/product-12.jpg', 'Table Black', '$67.00'),
-        new cards('all furniture', 'images/product-13.jpg', 'Table Wood Pine', '$50.00'),
-        new cards('all accessory', 'images/product-14.jpg', 'Teapot with black tea', '$25.00'),
-        new cards('all decoration', 'images/product-15.jpg', 'Unique Decoration', '$15.00'),
-        new cards('all decoration', 'images/product-16.jpg', 'Vase Of Flowers', '$77.00'),
-        new cards('all decoration', 'images/product-17.jpg', 'Wood Eggs', '$19.00'),
-        new cards('all decoration', 'images/product-18.jpg', 'Wooden Box', '$27.00'),
-        new cards('all accessory', 'images/product-19.jpg', 'Wooden Cups', '$29.00'),
-        new cards('all accessory', 'images/product-20.jpg', 'Soft Chair', '$55.00')
-    );
+    arr = [
+        new cards('decoration', 'images/product-1.jpg', 'Animi Dolor Pariatur', '$19.00'),
+        new cards('accessory', 'images/product-2.jpg', 'Out of Stock', '$30.00'),
+        new cards('decoration', 'images/product-3.jpg', 'Art Deco Home', '$19.00'),
+        new cards('accessory', 'images/product-4.jpg', 'Artificial potted plant', '$40.00'),
+        new cards('accessory', 'images/product-5.jpg', 'Dark Green Jug', '$17.10'),
+        new cards('furniture', 'images/product-6.jpg', 'Drinking Glasses', '$21.00'),
+        new cards('accessory', 'images/product-7.jpg', 'Helen Chair', '$69.50'),
+        new cards('accessory', 'images/product-8.jpg', 'High Quality Glass', '$30.10'),
+        new cards('furniture', 'images/product-9.jpg', 'Living Room & Bedroom', '$45.00'),
+        new cards('furniture', 'images/product-10.jpg', 'Simple Chair', '$40.00'),
+        new cards('decoration', 'images/product-11.jpg', 'Smooth Disk', '$46.00'),
+        new cards('furniture', 'images/product-12.jpg', 'Table Black', '$67.00'),
+        new cards('furniture', 'images/product-13.jpg', 'Table Wood Pine', '$50.00'),
+        new cards('accessory', 'images/product-14.jpg', 'Teapot with black tea', '$25.00'),
+        new cards('decoration', 'images/product-15.jpg', 'Unique Decoration', '$15.00'),
+        new cards('decoration', 'images/product-16.jpg', 'Vase Of Flowers', '$77.00'),
+        new cards('decoration', 'images/product-17.jpg', 'Wood Eggs', '$19.00'),
+        new cards('decoration', 'images/product-18.jpg', 'Wooden Box', '$27.00'),
+        new cards('accessory', 'images/product-19.jpg', 'Wooden Cups', '$29.00'),
+        new cards('accessory', 'images/product-20.jpg', 'Soft Chair', '$55.00')
+    ];
 };
 
 addArr();
 
 function drow(arr) {
+    shopMainCont.innerHTML = "";
     arr.forEach((val) => {
         // let label = val.filterName;
         shopMainCont.innerHTML += `
@@ -144,18 +144,22 @@ drow(arr)
 
 productLink.forEach((val) => {
     val.addEventListener('click', () => {
-        productLink.forEach((val) => val.classList.remove('active'));
-        val.classList.add('active');
-        filterFunc(val.getAttribute('data-filterBtn'));
-        drow(b)
+        if (val.getAttribute('data-filterBtn') === "all") {
+            drow(arr);
+        } else {
+            productLink.forEach((val) => val.classList.remove('active'));
+            val.classList.add('active');
+            filterFunc(val.getAttribute('data-filterBtn'));
+            drow(b)
+        }
     });
 })
 
 function filterFunc(ariaL) {
     shopMainCont.innerHTML = '';
     b = arr.filter((val) => {
-        let [all, filN] = val.filterName.split(' ');
-        if(all === ariaL || filN === ariaL) {
+        let filN = val.filterName;
+        if (filN === ariaL) {
             return val;
         }
     });
