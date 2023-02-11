@@ -205,3 +205,18 @@ function addCard() {
         alert("All fields must be filled (:");
     }
 }
+
+
+// Top Btn
+
+const topBox = document.getElementById('topBox');
+
+function toping() {
+    if(window.scrollY > 600) {
+        topBox.classList.add('active');
+    } else {
+        topBox.classList.remove('active');
+    }
+}
+
+window.addEventListener('scroll', toping)

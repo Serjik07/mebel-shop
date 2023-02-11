@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
 }
 
 :root {
@@ -23,17 +26,18 @@
   --white: hsl(0, 0%, 100%);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .section {
   width: 100%;
   min-height: 100vh;
-  padding: 40px 20px;
+  padding: 10px 20px;
+  padding-top: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-#header {
-  padding-top: 100px;
 }
 
 .container {
@@ -69,28 +73,29 @@
   align-items: center;
 }
 
-.navCont>.logo>h3 {
+.navCont > .logo > h3 {
   cursor: pointer;
   font-size: 2em;
   font-weight: normal;
   color: var(--smokey-black);
 }
 
-.navCont>.links {
+.navCont > .links {
   display: flex;
   align-items: center;
   gap: 45px;
 }
 
-.navCont>.links>li {
+
+
+.navCont > .links > li > a {
   font-size: 1.1em;
   color: var(--smokey-black);
-  list-style: none;
   cursor: pointer;
   position: relative;
 }
 
-.navCont>.links>li::after {
+.navCont > .links > li > a::after {
   content: '';
   width: 100%;
   height: 2px;
@@ -102,7 +107,7 @@
   transition: all 0.5s;
 }
 
-.navCont>.links>li:hover::after {
+.navCont > .links > li > a:hover::after {
   transform: translateX(-50%) scale(1);
 }
 
@@ -148,16 +153,51 @@
   background-color: var(--smokey-black);
 }
 
+/*-----------------------------------*\
+  #TOP
+\*-----------------------------------*/
+
+#topBox {
+  position: fixed;
+  z-index: 10;
+  bottom: 800px;
+  right: 10px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+#topBox.active {
+  opacity: 1;
+  bottom: 40px;
+}
+
+.topBtn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--smokey-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 10px 2px rgba(0,0,0,0.3);
+  transition: all 0.3s;
+}
+
+.topBtn > i {
+  font-size: 1.8em;
+  color: var(--white);
+}
+
+.topBtn:hover {
+  background: var(--tan-crayola);
+}
+
 #responsiveMenu {
   display: none;
 }
-
-.nav-icons>.menuBtn {
-  display: none;
-}
-
-
 /*__________ HEADER ____________ */
+
 
 .heder-main-container {
   display: flex;
@@ -235,7 +275,7 @@
 
 .about {
   flex-direction: column;
-  gap: 60px;
+  gap: 70px;
 }
 
 .about > .title {
@@ -269,8 +309,9 @@
 
 .main-down > img {
   width: 100%;
-  max-height: 480px;
-  height: 100%;
+  height: 480px;
+  background-size: contain;
+  object-fit: cover;
 }
 
 .esim {
@@ -293,7 +334,7 @@
 }
 
 .esim > ion-icon {
-  font-size: 6vw;
+  font-size: 7vw;
   color: var(--white);
 }
 
@@ -342,7 +383,6 @@
   width: 100%;
   padding: 12px 5px;
   padding-right: 120px;
-  outline: none;
   font-size: 1.1em;
   color: var(--smokey-black);
   border: 1px solid var(--smokey-black);
@@ -412,7 +452,6 @@
   border: 1px solid var(--black);
   font-size: 1.1em;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.05);
-  outline: none;
 }
 
 .inputs > button {
@@ -541,6 +580,7 @@
 
 .blog {
   flex-direction: column;
+  padding-bottom: 60px;
   gap: 60px;
 }
 
@@ -697,6 +737,14 @@ footer > .container {
     width: 100%;
   }
 
+  .about > .title {
+    max-width: 750px;
+  }
+
+  .about > .main-down > img {
+    height: 400px;
+  }
+
   .navCont > .links {
     gap: 20px;
   }
@@ -827,7 +875,7 @@ footer > .container {
     gap: 20px;
   }
 
-  #responsiveMenu > .aside > .aside-main > .link {
+  #responsiveMenu > .aside > .aside-main > a > .link {
     width: 100%;
     padding: 15px 0;
     font-size: 15px;
@@ -836,16 +884,16 @@ footer > .container {
     transition: all 0.5s;
   }
 
-  #responsiveMenu > .aside > .aside-main > .link:hover {
+  #responsiveMenu > .aside > .aside-main > a > .link:hover {
     background-color: rgb(238, 238, 238);
   }
 
-  #responsiveMenu > .aside > .aside-main > .link > span {
+  #responsiveMenu > .aside > .aside-main > a > .link > span {
     color: var(--smokey-black);
     font-size: 1.5em;
   }
 
-  #responsiveMenu > .aside > .aside-main > .link:hover>span {
+  #responsiveMenu > .aside > .aside-main > a > .link:hover > span {
     color: var(--tan-crayola);
   }
 
@@ -875,6 +923,10 @@ footer > .container {
     width: 100%;
   }
 
+  .about > .title {
+    max-width: 500px;
+  }
+
   .heder-main-container > .someCont {
     flex-flow: row wrap;
   }
@@ -891,6 +943,10 @@ footer > .container {
   .heder-main-container > .up > .great {
     order: 3;
     width: 100%;
+  }
+
+  .about > .main-down > img {
+    height: 300px;
   }
 
   .shopMainCont > .card {
@@ -968,6 +1024,11 @@ footer > .container {
     .shopMainCont {
       gap: 50px;
     }
+
+    .blog > .title {
+      flex-direction: column;
+      gap: 30px;
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -977,5 +1038,9 @@ footer > .container {
 
   .about > .title > p {
     font-size: 0.9em;
+  }
+
+  .about > .main-down > img {
+    height: 250px;
   }
 }
