@@ -47,6 +47,77 @@
             display: flex;
         }
 
+        .blog {
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .blog > .title {
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .blog > .title > h2 {
+            font-size: 2.2em;
+            font-weight: normal;
+            color: var(--smokey-black);
+        }
+
+        .blog > .title > span {
+            font-size: 1.1em;
+            color: var(--smokey-black);
+            display: flex;
+            align-items: center;
+            align-content: center;
+            transition: all 0.5s;
+        }
+
+        .blog > .title > span:hover {
+            color: var(--tan-crayola);
+        }
+
+        .blog > .title > span > ion-icon {
+            font-size: 1.3em;
+        }
+
+        .blogCards {
+            display: flex;
+            gap: 25px;
+        }
+
+        .blogCards > .card {
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .blogCards > .card > .img {
+            width: 100%;
+            height: 300px;
+            position: relative;
+        }
+
+        .blogCards > .card > .img > img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+        }
+
+        .blogCards > .card > .img > .read {
+            position: absolute;
+            bottom: 0;
+            right: -100%;
+            padding: 10px 30px;
+            background: var(--white);
+            box-shadow: 0 0 5px 2px var(--black_10);
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+        .blogCards > .card > .img:hover > .read {
+            right: 0;
+        }
         
         @media screen and (max-width: 1300px) {
             .container {
@@ -89,9 +160,58 @@
     </style>
 </head>
 <body>
-    <div class="section">
-        <div class="container">
+    <div class="section blogs">
 
+        <div class="continer title">
+            <h2>Explore our blog</h2>
+            <span>View All <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon></span>
+        </div>
+
+        <div class="container blogCards">
+            <div class="card">
+                <div class="img">
+                    <img src="images/blog-1.jpg" alt = 'Unique products that will impress your home in 2022.'>
+                    <div class="read"><span>Read more</span><ion-icon name="add-outline" aria-hidden="true"></ion-icon></div>
+                </div>
+                <div class="content">
+                    <h3>Unique products that will impress your home in 2022.</h3>
+                    <div class="paragraph">
+                        <span>November 27, 2022</span><span>/</span>
+                        <span>Admin</span><span>/</span>
+                        <span>in deco</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="images/blog-2.jpg" alt = 'Unique products that will impress your home in 2022.'>
+                    <div class="read"><span>Read more</span><ion-icon name="add-outline" aria-hidden="true"></ion-icon></div>
+                </div>
+                <div class="content">
+                    <h3>Navy Blue & White Striped Area Rugs</h3>
+                    <div class="paragraph">
+                        <span>November 25</span><span>/</span>
+                        <span>Admin</span><span>/</span>
+                        <span>in deco</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="images/blog-3.jpg" alt = 'Unique products that will impress your home in 2022.'>
+                    <div class="read"><span>Read more</span><ion-icon name="add-outline" aria-hidden="true"></ion-icon></div>
+                </div>
+                <div class="content">
+                    <h3>Woodex White Coated Staircase Floating</h3>
+                    <div class="paragraph">
+                        <span>November 18</span><span>/</span>
+                        <span>Admin</span><span>/</span>
+                        <span>in deco</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
