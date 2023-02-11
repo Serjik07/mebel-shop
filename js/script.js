@@ -199,7 +199,7 @@ function addCard() {
         drow(arr);
         newName.value = "";
         newPrice.value = "";
-        newType.value = "";
+        newType.value = "accessory";
         newImgUrl.value = "";  
     } else {
         alert("All fields must be filled (:");
