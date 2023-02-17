@@ -105,7 +105,6 @@ const arr = [
     new Cards('accessory', 'images/product-19.jpg', 'Wooden Cups', '$29.00'),
     new Cards('accessory', 'images/product-20.jpg', 'Soft Chair', '$55.00')
 ];
-console.log(arr)
 
 function drow(arr) {
     shopMainCont.innerHTML = "";
@@ -148,7 +147,6 @@ productLink.forEach((val) => {
 })
 
 function filterFunc(ariaL) {
-    shopMainCont.innerHTML = '';
     return arr.filter((val) => {
         let filN = val.filterName;
         if (filN === ariaL) {
@@ -184,7 +182,6 @@ function addCard() {
     });
 
     if(!(newName.value === "" || newImgUrl.value === "" || newName.value === "" || newPrice.value  === "")) {
-        console.log(newName,newImgUrl,newPrice,newType)
         arr.unshift(new Cards(newType.value,newImgUrl.value,newName.value,newPrice.value));
         drow(arr);
         newName.value = "";
