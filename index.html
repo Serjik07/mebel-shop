@@ -23,7 +23,7 @@
         <nav id="nav">
             <div class="navCont container">
                 <div class="logo">
-                    <h3>Woodex</h3>
+                    <h3 id="logo">Woodex</h3>
                 </div>
 
                 <ul class="links">
@@ -39,6 +39,10 @@
                     <i class="fa fa-shopping-bag" aria-hidden="true"><sub>0</sub></i>
                     <i class="fa fa-bars menuBtn" aria-hidden="true"></i>
                 </div>
+                <label class="switch">
+                    <input type="checkbox" onclick="dark_light_mode()">
+                    <span class="slider round"></span>
+                </label>
             </div>
         </nav>
 
@@ -47,29 +51,29 @@
                 <div class="norm someChild">
                     <h3 class="header-card-title">Art Deco Home</h3>
                     <p class="header-card-paragraph">Decoration</p>
-                    <img src="images/hero-product-1.jpg" alt="img1">
+                    <img src="images/hero-product-1.jpg" class="nav_images" alt="img1">
                 </div>
                 <div class="great someChild">
                     <h3 class="header-card-title">Helen Chair</h3>
                     <p class="header-card-paragraph">Decoration</p>
-                    <img src="images/hero-product-2.jpg" alt="img2">
+                    <img src="images/hero-product-2.jpg" class="nav_images" alt="img2">
                 </div>
                 <div class="norm someChild">
                     <h3 class="header-card-title">Vase Of Flowrs</h3>
                     <p class="header-card-paragraph">Decoration</p>
-                    <img src="images/hero-product-3.jpg" alt="img3">
+                    <img src="images/hero-product-3.jpg" class="nav_images" alt="img3">
                 </div>
             </div>
             <div class="down someCont">
                 <div class="down-card-header someChild">
                     <h3 class="header-card-title">Wood Eggs</h3>
                     <p class="header-card-paragraph">Decoration</p>
-                    <img src="images/hero-product-4.jpg" alt="img4">
+                    <img src="images/hero-product-4.jpg" class="nav_images" alt="img4">
                 </div>
                 <div class="down-card-header someChild">
                     <h3 class="header-card-title">Table Wood Pine</h3>
                     <p class="header-card-paragraph">Decoration</p>
-                    <img src="images/hero-product-5.jpg" alt="img5">
+                    <img src="images/hero-product-5.jpg" class="nav_images" alt="img5">
                 </div>
             </div>
         </div>
@@ -111,7 +115,7 @@
             </p>
         </div>
         <div class="container main-down">
-            <img src="images/about-banner.jpg" alt="about img">
+            <img src="images/about-banner.jpg" alt="about img" id="about_img">
             <div class="esim"><ion-icon name="play-circle-outline"></ion-icon></div>
         </div>
     </div>

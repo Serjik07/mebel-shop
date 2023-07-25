@@ -207,3 +207,83 @@ function toping() {
 }
 
 window.addEventListener('scroll', toping)
+
+
+const body = document.querySelector("body")
+const top_images = document.querySelectorAll(".nav_images")
+const someChild = document.querySelectorAll(".someChild")
+const up = document.querySelector(".up")
+const down = document.querySelector(".down")
+const logo = document.querySelector("#logo")
+const about_img = document.querySelector("#about_img")
+const title = document.querySelector(".title")
+const shops = document.querySelector("#shops")
+const add_product = document.querySelector(".addProduct")
+const cards = document.querySelectorAll(".card")
+const blog = document.querySelector("#blog")
+const footer = document.querySelector("footer")
+
+
+
+
+// console.log(top_images)
+function dark_light_mode() {
+    console.log(body.style.backgroundColor)
+
+    if(body.style.backgroundColor == "rgb(65, 64, 64)") {
+        body.style.backgroundColor == "white"
+        up.classList.remove("dark")
+        down.classList.remove("dark")
+        nav.classList.remove("dark")
+        title.classList.remove("dark")
+        shops.classList.remove("dark")
+        blog.classList.remove("dark")
+        footer.classList.remove("dark")
+        add_product.classList.remove("dark")
+
+        for(let card of cards) {
+            card.classList.remove("dark")
+        }
+
+        top_images[0].src = "images/hero-product-1.jpg";
+        top_images[1].src = "images/hero-product-2.jpg";
+        top_images[2].src = "images/hero-product-3.jpg";
+        top_images[3].src = "images/hero-product-4.jpg";
+        top_images[4].src = "images/hero-product-5.jpg";
+        about_img.src = "images/about-banner.jpg"
+
+        logo.style.color = "black"
+        menuBtn.style.color = "black"
+        body.style.backgroundColor = "white"
+        nav.style.backgroundColor = "white"
+    }else {
+        up.classList.toggle("dark")
+        down.classList.toggle("dark")
+        nav.classList.toggle("dark")
+        title.classList.toggle("dark")
+        shops.classList.toggle("dark")
+        blog.classList.toggle("dark")
+        footer.classList.toggle("dark")
+        add_product.classList.toggle("dark")
+    
+        for(let card of cards) {
+            card.classList.toggle("dark")
+        }
+
+
+
+        top_images[0].src = "images/hero-product-1-removebg-preview.png";
+        top_images[1].src = "images/hero-product-2-removebg-preview.png";
+        top_images[2].src = "images/hero-product-3-removebg-preview.png";
+        top_images[3].src = "images/hero-product-4-removebg-preview.png";
+        top_images[4].src = "images/hero-product-5-removebg-preview.png";
+        about_img.src = "images/about-banner-removebg-preview.png"
+
+        logo.style.color = "white"
+        menuBtn.style.color = "white"
+        body.style.backgroundColor = "rgba(65,64,64,1)"
+        nav.style.backgroundColor = "rgba(65,64,64,1)"
+        
+    }
+    
+}

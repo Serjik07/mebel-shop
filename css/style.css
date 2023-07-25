@@ -154,6 +154,71 @@ html {
 }
 
 /*-----------------------------------*\
+  #Nav_button
+\*-----------------------------------*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 27px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*-----------------------------------*\
   #TOP
 \*-----------------------------------*/
 
@@ -197,6 +262,10 @@ html {
 
 #responsiveMenu {
   display: none;
+}
+
+nav.dark >  .navCont > .nav-icons > i{
+  color: white;
 }
 
 .nav-icons > .menuBtn{
@@ -273,9 +342,18 @@ html {
   width: 50%;
 }
 
+.dark > .someChild{
+  border: 1px solid var(--tan-crayola);
+  border-radius: 5px;
+}
+.dark > div > h3,.dark > div > p {
+  color: white;
+}
 .down>.down-card-header {
   width: 50%;
 }
+
+
 
 /* Main  */
 
@@ -1049,4 +1127,86 @@ footer > .container {
   .about > .main-down > img {
     height: 250px;
   }
+  .navCont > .nav-icons > .fa-user-o, .navCont > .nav-icons .fa-heart, .navCont > .nav-icons .fa-shopping-bag{
+    display: none;
+  }
+}
+
+
+
+.title.dark > h2,.title.dark > p {
+  color: white;
+}
+nav.dark > .navCont > ul > li > a{
+  color: white;
+}
+#shops.dark > .shopContUp > h2 {
+  color: white;
+}
+#shops.dark > .shopContUp > .right-aside > .search > input {
+  background-color: rgba(0,0,0,0.3);
+  border-color: white;
+  color: white;
+}
+#shops.dark > .shopContUp > .right-aside > .search > button {
+  background-color: white;
+  color: #000;
+  transition: all 0.5s;
+}
+#shops.dark > .shopContUp > .right-aside > .search > button:hover {
+  background-color: var(--tan-crayola);
+}
+
+#shops.dark > .shopContUp > .right-aside > .filterProductName > .link{
+  color: white;
+}
+
+#shops.dark > .shopContUp > .right-aside > .filterProductName > .link:hover{
+  color: var(--tan-crayola);
+}
+
+#shops.dark > .shopContUp > .right-aside > .filterProductName > .link.link.active {
+  color: var(--tan-crayola);
+}
+
+.addProduct.dark > h2 {
+  color: white;
+}
+
+.addProduct.dark > .inputs > input,.addProduct.dark > .inputs > select {
+  background-color: rgba(0,0,0,0.3);
+  color: white;
+}
+.addProduct.dark > .inputs > button {
+  color: white;
+  transition: all 0.5s;
+}
+.addProduct.dark > .inputs > button:hover {
+  background-color: white;
+  color: var(--tan-crayola);
+}
+
+.card.dark > .content > .productName,.card.dark > .content > .gin {
+  color: white;
+}
+
+.blog.dark > .title > h2,.blog.dark > .title > span {
+  color: white;
+  transition: all 0.5s;
+}
+
+.blog.dark > .title > span:hover {
+  color: var(--tan-crayola);
+}
+
+.card.dark > .content > h3, .card.dark > .content > .paragraph > span{
+  color: white;
+}
+
+footer.dark {
+  background-color: rgba(0,0,0,0.3);
+}
+
+footer.dark > .container > #footer-p{
+  color: white;
 }
