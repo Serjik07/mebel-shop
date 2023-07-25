@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mebel-shop</title>
+    <link rel="icon" href="favicon.svg" sizes="16*16">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font-Aweson -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header id="header" class="section">
+
+        <nav id="nav">
+            <div class="navCont container">
+                <div class="logo">
+                    <h3 id="logo">Woodex</h3>
+                </div>
+
+                <ul class="links">
+                    <li><a href="#header">Hero</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#shops">Shop</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+
+                <div class="nav-icons">
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                    <i class="fa fa-heart" aria-hidden="true"><sub>0</sub></i>
+                    <i class="fa fa-shopping-bag" aria-hidden="true"><sub>0</sub></i>
+                    <i class="fa fa-bars menuBtn" aria-hidden="true"></i>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" onclick="dark_light_mode()">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </nav>
+
+        <div id="hero" class="heder-main-container container">
+            <div class="up someCont">
+                <div class="norm someChild">
+                    <h3 class="header-card-title">Art Deco Home</h3>
+                    <p class="header-card-paragraph">Decoration</p>
+                    <img src="images/hero-product-1.jpg" class="nav_images" alt="img1">
+                </div>
+                <div class="great someChild">
+                    <h3 class="header-card-title">Helen Chair</h3>
+                    <p class="header-card-paragraph">Decoration</p>
+                    <img src="images/hero-product-2.jpg" class="nav_images" alt="img2">
+                </div>
+                <div class="norm someChild">
+                    <h3 class="header-card-title">Vase Of Flowrs</h3>
+                    <p class="header-card-paragraph">Decoration</p>
+                    <img src="images/hero-product-3.jpg" class="nav_images" alt="img3">
+                </div>
+            </div>
+            <div class="down someCont">
+                <div class="down-card-header someChild">
+                    <h3 class="header-card-title">Wood Eggs</h3>
+                    <p class="header-card-paragraph">Decoration</p>
+                    <img src="images/hero-product-4.jpg" class="nav_images" alt="img4">
+                </div>
+                <div class="down-card-header someChild">
+                    <h3 class="header-card-title">Table Wood Pine</h3>
+                    <p class="header-card-paragraph">Decoration</p>
+                    <img src="images/hero-product-5.jpg" class="nav_images" alt="img5">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="topBox">
+        <a href="#header">
+            <div class="topBtn"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
+        </a>
+    </div>
+    
+
+    <div id="responsiveMenu">
+        <div class="vse"></div>
+        <div class="aside">
+            <div class="aside-up">
+                <div class="logo">
+                    <h3>Woodex</h3>
+                </div>
+                <ion-icon name="close-outline" class="close"></ion-icon>
+            </div>
+
+            <div class="aside-main">
+                <a href="#header"><div class="link"><span>Hero</span></div></a>
+                <a href="#about"><div class="link"><span>About Us</span></div></a>
+                <a href="#shops"><div class="link"><span>Shop</span></div></a>
+                <a href="#blog"><div class="link"><span>Blog</span></div></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="about" class="about section">
+        <div class="title">
+            <h2>Woodex Store</h2>
+            <p>When you start with a portait and search for a pure form, a clear volume, through successive
+                eliminations, you arrive inevitably at the agg. Likewise,starting with the egg and following
+                the same process in reverse, one finishes with the portait.
+            </p>
+        </div>
+        <div class="container main-down">
+            <img src="images/about-banner.jpg" alt="about img" id="about_img">
+            <div class="esim"><ion-icon name="play-circle-outline"></ion-icon></div>
+        </div>
+    </div>
+
+    <div id="shops" class="section">
+        <div class="shopContUp container">
+            <h2 class="shopTitle">Popular Products</h2>
+            <div class="right-aside">
+
+                <div class="search">
+                    <input type="text" id="shop-search" maxlength="40" placeholder="Search Product...">
+                    <button id="shopBtn">Search</button>
+                </div>
+
+                <div class="filterProductName">
+                    <p class="link active" data-filterBtn="all">All Products</p><span>|</span>
+                    <p class="link" data-filterBtn="accessory">Accessory</p><span>|</span>
+                    <p class="link" data-filterBtn="decoration">Decoration</p><span>|</span>
+                    <p class="link" data-filterBtn="furniture">Furniture</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container addProduct">
+            <h2>Add Your Product</h2>
+
+            <div class="inputs">
+                <select name="type" id="type-select">
+                    <option value="accessory">accessory</option>
+                    <option value="decoration">decoration</option>
+                    <option value="furniture">furniture</option>
+                </select>
+                <input type="text" name="name" placeholder="Name">
+                <input type="text" name="imgurl" placeholder="Img-Url">
+                <input type="text" name="price" placeholder="Price">
+                <button>Add Your Card</button>
+            </div>
+        </div>
+
+        <div class="shopMainCont container"></div>
+    </div>
+
+    
+    
+    <div id="blog" class="section blog">
+
+        <div class="container title">
+            <h2>Explore our blog</h2>
+            <span>View All <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon></span>
+        </div>
+
+        <div class="container blogCards">
+            <div class="card">
+                <div class="img">
+                    <img src="images/blog-1.jpg" alt = 'Unique products that will impress your home in 2022.'>
+                    <div class="read"><span>Read more</span><ion-icon name="add-outline" aria-hidden="true"></ion-icon></div>
+                </div>
+                <div class="content">
+                    <h3>Unique products that will impress your.</h3>
+                    <div class="paragraph">
+                        <span>November 27, 2022</span><span>/</span>
+                        <span>Admin</span><span>/</span>
+                        <span>in deco</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="images/blog-2.jpg" alt = 'Unique products that will impress your home in 2022.'>
+                    <div class="read"><span>Read more</span><ion-icon name="add-outline" aria-hidden="true"></ion-icon></div>
+                </div>
+                <div class="content">
+                    <h3>Navy Blue & White Striped Area Rugs</h3>
+                    <div class="paragraph">
+                        <span>November 25</span><span>/</span>
+                        <span>Admin</span><span>/</span>
+                        <span>in deco</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="images/blog-3.jpg" alt = 'Unique products that will impress your home in 2022.'>
+                    <div class="read"><span>Read more</span><ion-icon name="add-outline" aria-hidden="true"></ion-icon></div>
+                </div>
+                <div class="content">
+                    <h3>Woodex White Coated Staircase Floating</h3>
+                    <div class="paragraph">
+                        <span>November 18</span><span>/</span>
+                        <span>Admin</span><span>/</span>
+                        <span>in deco</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <p id="footer-p">Designed by <span>Serjik Harutunyan</span> and <span>Narek Hambardzumyan</span></p>
+        </div>
+    </footer>
+    <script defer src="js/script.js"></script>
+
+    <!-- ion-icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
